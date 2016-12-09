@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Bag()
+comment0.text=\n\ Got\ info\ for\ reading\ files\ from\ http\://www.mkyong.com/java/how-to-read-file-from-java-bufferedreader-example/\n\ \n\ Will\ initilise\ the\ list\ of\ titles\ so\ when\ a\ new\ tile\ is\ needed\ one\ can\ be\n\ radomly\ chosen\ quickly\n
+comment1.params=
+comment1.target=Tile\ getNewTile()
+comment1.text=\n\ Function\ randomly\ selects\ a\ tile\ from\ the\ tiles\ array\ and\ returns\ it\n
+comment2.params=
+comment2.target=boolean\ isMoreTiles()
+comment2.text=\n\ Returns\ true\ if\ there\ are\ tiles\ remaining\ in\ the\ bag\n\ other\ wise\ false\ is\ returned\ \n
+comment3.params=
+comment3.target=boolean\ reset()
+comment3.text=\n\ Resets\ the\ bag\ of\ tiles\n
+comment4.params=s
+comment4.target=void\ save(SaveGame)
+comment4.text=\n\ Saves\ all\ the\ information\ related\ to\ the\ bag\ class\n
+comment5.params=s
+comment5.target=boolean\ load(SaveGame)
+comment5.text=\n\ Loads\ all\ the\ information\ for\ the\ bag\ class\n
+numComments=6

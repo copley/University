@@ -1,0 +1,76 @@
+My interface was a fairly simple design, i wanted to make it simple so it was clear
+where everything was. Sinse my program dident have as many fetures as other diagram editiors like InkScape
+i though it would be silly to organise everything under diffrent menus as this would just over complicate things.
+
+The only seperation i did was to put the "New", "Load", "Save" and "Print" function under a menu called file, and
+i made this menu visible up the top of the screen so all the functionality like this was out of the way but still
+visible. I did this because function like this wont be run so often as the ones that actually edit the diagrams
+and putting them on the toolbar would just mean the user would have to look through more buttons than they should have to.
+While this many not effect an experenced user to any new user this would just make it harder to learn how to use the software.
+
+I put all the tools on the toolbar that is defaultly positioned on the left hand side but the user can move it to a more comfterble position if
+the wish to, they can connect to any of the sides or compleatly disconnect it from the editior and have it seperate. This is perticutly useufull for people
+like me who have two screens, it means that you can have one screen dedacated to editing a document and have the other one store
+things like tools or another reason why this would be useful is if you where an experenced user and knew all the shortcuts for the program
+you could move the toolbar off screen and have more space for your diagram. I found this style increadably useful when i have been using photoshop 
+so i though it would be something nice to implement. All the buttons are images that i made, they all depict what the button will do but if the use 
+dosnt understand one they can still hover over the button to get a tooltip. this tooltip also contians the shortcut to that tool.
+
+Rather than having all the buttons on the toolbar active so that they could always be clicked i decided to grey out the ones that where unavailable at
+the time. Because i thought it better to prevent the user from clicking something that wont work than letting them click it and just giving them an
+error message saying sorry you cant do that right now. This required some extra work though, i had to create my own event and event listener so that my
+main GUI could recive a message when something was selected or deselected so it knew what buttons to allow.
+
+Moving: The moving is very simple, you just select one or more shape and then click and drag from inside one of them to move the shape(s). I made it so you could move one
+or more shape at a time because sometimes you will have an arangement of shapes that you like and you want to move them all but keep the distances between them the same.
+
+Resizing: The way i am doing my resizing is to have 4 handles places on each size of the shape, you can click and drag them to extend or shorten the shape in that
+direction. I liked this much more than any other option because it gives you more controll over how you resize the shapes.
+
+Deleting: Rather than having a delete button in the UI i thought that a much better way of doing it would just be like
+every other editior, using the delete key on the keyboard to delete shapes, also sinse its a common way of doing this it makes
+it much easier for users to pick the program up and use it.
+
+Setting/Removing Text: Rather than having text as a seperate object, i have build it into the shape class so the user
+can add text to a shape they choose. The user is able to do this with two buttons that i have places on the toolbar. They are clearly
+visible and the button icons are explisit as to what they do. I decided to have only one peice of text per shape, i.e.
+if you set the text for a shape it would be placed in the center of that shape. I did it this way because i thought it would leade to simplier
+diagrams.
+
+Adding And Removing Lines: You can add a line by selecting two shapes and clicking the link button, this will join them by a line,
+This line counts as a shape so once created you can select it and delete it like you would any other shape. However you cant peform other actions
+on it such as move or scale, movement and length will change automaticly as you edit the other shapes. If you delete a
+shape that has lines connected to it then all thoughs lines will be removed also. While this wasnt the only way to do it, i could of just left
+the lines there, this wouldent of served much purpous becasue the way i implemented the lines would mean that all you could do with them
+would be delete them.
+
+####################
+## Added Fetures  ##
+####################
+
+Align: If you have multiple shapes that you want to have aligned with each other there are two buttons that you can use
+you can use the align verticly and align horizontally. These will align the centers of the selected shapes. I thought this
+was important to implement because having to align your shapes manually would be a pain, it would be diffcult to see when
+they where lined up and this would just fustrate the user.
+
+Arange: The arangement of objects controlls in what order they are displayed on screen, i.e. if you make a new shape it
+will be displayed over the exsisting shapes but you can use the bring to front and send to back buttons to change this order.
+This is a tool that i have used ALOT when working with tools like photoshop and it seemed like something this program needed otherwise
+to get an arangement you wanted you would have to draw the shapes in a specific order and a good program shouldent make the user do this.
+
+Printing: You can print the diagram out by selecting the print option under the file menu. This will scale the diagram to fit a single A4
+page, i thought this the best way to do it because i couldent think of a nice way to print large diagrams to multiple sheets of paper, also 
+having a diagram on one bit of paper would make it easier to distrubute. Distrubution of diagrams was a big reason for implementing this
+feature, because realisticly not everyone is going to have the same software so sending round a save file of the diagram wont help but printing it off
+dosnt require anything on the recipents end of things.
+
+Undo: Using the ctrl Z command you can undo previous actions. I thought this would be a very important thing to implement because everyone makes mistakes
+and making a user start a diagram again or peform alot of steps again because they made a mistake would put people off your program very fast.
+
+Shortcuts: Sinse i allready had the delete key hooked up i thought it would be a good idea to work on some other short cuts for things like "Save", "load",
+"print", and moving around. if you use the arrow keys it will move a shape around by 5 pixles in the direction of the arrow keys. Shortcuts seemed like a good thing to
+do because as long as you keep them simple they arnt going to effect your program badly, it just makes the program easier to use for experenced users and sinse they are
+hidden it dosnt over complicate things for new users. For most of my shortcuts i went with ones that most programs use like ctrl s for save. sinse this is a standard for most programs
+i thought it would make it easier for a user to pick up.
+
+

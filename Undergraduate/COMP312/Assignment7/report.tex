@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{listings}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\title{COMP 312 Assignment 7}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+  	\section{Python}
+  		\subsection{Program A}
+			\subsubsection{Code}
+				\lstinputlisting[language=Python]{Programs/01.py}
+			\subsubsection{Output}
+				Estimate of W: 1.20972369916\\
+				Conf int of W: (1.2029828999724295, 1.2164644983404909)\\
+
+Estimate of Balk: 0.214441575607\\
+Conf int of Balk: (0.21298878230402357, 0.21589436890972064)\\
+
+Estimate of Reject: 0.008358\\
+Conf int of Reject: (0.0079898917534854726, 0.0087261082465145256)\\
+
+
+  		
+  		
+  		\subsection{Program B}
+  			\subsubsection{Code}
+				\lstinputlisting[language=Python]{Programs/02.py}
+			\subsubsection{Output}
+				
+1 Tug Boats\\
+\\
+Estimate of W: 1.5617122988\\
+Conf int of W: (1.5568093809484571, 1.5666152166434895)\\
+\\
+Estimate of U: 0.994934336555\\
+Conf int of U: (0.99485610117267298, 0.99501257193779857)\\
+\\
+2 Tug Boats\\
+\\
+Estimate of W: 1.55240355925
+Conf int of W: (1.547537739331946, 1.5572693791732504)\\
+\\
+Estimate of U: 1.0\\
+Conf int of U: (1.0, 1.0)\\
+\\
+1 Tug Boats\\
+\\
+Estimate of W: 1.5617122988\\
+Conf int of W: (1.5568093809484571, 1.5666152166434895)\\
+
+Estimate of U: 0.994934336555\\
+Conf int of U: (0.99485610117267298, 0.99501257193779857)\\
+\\
+2 Tug Boats\\
+\\
+Estimate of W: 1.55240355925\\
+Conf int of W: (1.547537739331946, 1.5572693791732504)\\
+\\
+Estimate of U: 1.0\\
+Conf int of U: (1.0, 1.0)\\
+
+
+\end{document}

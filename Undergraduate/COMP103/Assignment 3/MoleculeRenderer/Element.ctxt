@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=name\ radius\ color
+comment0.target=Element(java.lang.String,\ double,\ java.awt.Color)
+comment1.params=
+comment1.target=java.awt.Color\ getColor()
+comment2.params=
+comment2.target=double\ getRadius()
+comment3.params=
+comment3.target=java.lang.String\ getName()
+numComments=4

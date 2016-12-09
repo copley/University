@@ -1,0 +1,35 @@
+/* Reflection.txt for COMP103
+ * Name:
+ * Usercode:
+ * ID:
+ */
+
+For your reflection:
+====================
+
+Firstly, describe how far you got, on this assignment. If there was a problem
+you got stuck on, what was that problem?
+
+
+Java provides several different implementations of the =Set= type, including =HashSet= and
+=TreeSet=.  Why didn't it provide =ArraySet= ?  (After all, it provided the
+=ArrayList= implementation of the =List= type!).
+
+
+Coming up with good test methods can be as hard as writing the code that it is
+testing.  Suggest some guidelines or principles for writing good test methods.
+
+
+--------------------------------------------------------------------
+I was able to finish all the parts of this assignment. However i had a bit of trouble with the
+regex for removing the puncuation
+
+I would say they dident provide ArraySet because the other two options are alot better, and there
+isnt a case where you could be better of by using an ArraySet. The HashSet was alot faster than the ArraySet
+in this assignment, and i would always choose the HashSet over the ArraySet.
+
+The way i went about designing tests was to first just think about testing each of the methods, i.e. can you
+add to the queue and can you remove from the queue. Then i looked at the methods a bit closer to make sure i was
+testing all the possible parts of the code, for example in the ensure capaicy method there are two bits of code
+that can be executed depending on where your head and tail are, so i designed tests to make sure both of thoughs worked.
+Then its a good idea to think of boundary cases, one example is that you shouldent be able to insert null into the queue.

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=height\ width\ colorDepth\ compressed\ data
+comment0.target=PBMImage(int,\ int,\ int,\ boolean,\ java.lang.String)
+comment1.params=data
+comment1.target=void\ parseImageData(java.lang.String)
+numComments=2

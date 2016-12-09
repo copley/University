@@ -1,0 +1,17 @@
+Create an empty list to store the articulation points -> points
+
+Reset the depths of the nodes to Infinity
+
+For each of disjoint sets
+	Get the root node -> root
+	
+	Set subtrees = 0
+	root.depth <- 0
+	
+	For each of the neighbours of the root
+		If the depth is Infinity
+			subtrees++
+			findArticulationPoints(neighbour, root, points)
+			
+	If subtrees > 1
+		Then root is an articualtion point, add it to points

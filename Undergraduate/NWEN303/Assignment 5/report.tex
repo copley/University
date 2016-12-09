@@ -1,0 +1,164 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{float}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+
+\title{NWEN 303 Assignment 4}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+  	\section{Question 1}
+  		The simplest way to achieve this is to have node 5 always send the value of X to node 10 when ever it is changed, and wait for node 10 to read it. Then node 10 will attempt to receive a value of X when ever it needs to use it.\\ 
+  		
+  		However this causes a large bottle neck and if one of the nodes stops using X then the other is stuck for ever. Perhaps a better option is to run a background process on each of the nodes. On node 5 this  background process will be checking for updates to the variable X and when it detects one it will send the variable to node 10. The background process on node 10 will be constantly listening for updates and when it receives one it will write that change. We can implement this using locks and condition variables to avoid any race conditions. First we define the background process doing the sending.
+  			
+  		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State $cond\ OKU,\ OKC$
+			
+				\Procedure{sender}{}
+					\While{$true$}
+						\State $OKU.await()$
+						\State $send(10, X, "X")$
+						\State $OKC.signal()$
+					\EndWhile
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		
+		Here we have two condition variables, OKU (ok update) and OKC (ok continue). When a change is made to X the main process will signal OKU and wait for OKC to be signaled. The sender process will be woken and will attempt a send, this send will block until the receiver gets it. Now we define the receiver process.
+		
+		  			
+  		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State $using \gets false$
+				\State $cond OKC$
+			
+				\Procedure{receiver}{}
+					\While{$true$}
+						\State $receive(5, "X'")$
+						\State $aquire()$
+						\State $X \gets X'$
+						\State $unlock()$
+					\EndWhile
+				\EndProcedure
+				
+				\Procedure{lock}{}
+					\If{$using is true$}
+						\State $OKC.await()$
+					\EndIf
+					
+					\State $using \gets true$
+				\EndProcedure
+				
+				\Procedure{unlock}{}
+					\State $using \gets false$
+					\State $OKC.signal()$
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+  	
+		When ever the main process is going to use X it must first use the lock method, and when it is finish it must use the unlock method. Here we attempt to receive the variable from node 5, this will block until there is one to receive, we store this update in a temporary variable. We then use the lock function to get exclusive access to the variable we want to update, now we can update the value of X and then run the unlock function to release our exclusive access.
+  		
+  	\section{Question 2}
+		For this problem we can use non blocking sends and receives. Here we assume that a non blocking receive will be queued (rather than failing) if there is current message to be received. The solution will work by the coordinator initiating a non blocking receive for each of the rooms. Then when a message arrives at the coordinator we can activate the corresponding receive and a sub routine will flash the corresponding room and finally initiate a new non blocking receive for that room.
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]			
+				\Procedure{cordinator}{}
+					\For{$i = 1$ to $199$}
+						\State $receiveA(i, "flash")$
+					\EndFor
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]			
+				\Procedure{sensor}{}
+					\While{$true$}
+						\State $movement\_detected()$
+						\State $sendA(0, true, "flash")$
+					\EndWhile
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		
+		So now we define our sub routine which is run when an async receive is activated. We assume that the node id number, and the received variable are bound within the scope of the procedure.
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\Procedure{receive}{$node_{id}$}						\State $flash(node_{id})$
+					\State $receiveA(node_{id}, "flash")$
+				\EndProcedure			
+			\end{algorithmic}
+		\end{algorithm}
+		
+		At the end of a receive sub routine, we submit another async receive for the given node.
+  	
+  	\section{Question 3}
+		The parallel implementation might have a large overhead, which when run on a large N isn't such a problem as it is outweighed by the speedup. However on a single node the overhead of the parallelisation could significantly overshadow the time it takes to actually do the computation. Using another implementation of the program which is serial means its (hopefully) as fast as it can be on a single computer so we are getting a better comparison.
+  	
+  	
+  	\section{Question 4}
+		Averaging a list of numbers is simple, first we sum up the list then divide by the total number of elements. So we can simply divide (scatter) the list of numbers up over the N nodes, the N nodes can sum up the numbers they are given. Then finally the coordinator can gather the individual sums from each of the N nodes, add them all together and compute the average. There is no dependency between any of the N workers, also there is very little communication overhead as the workers don't need to communicate. This is why I would say this problem is embarrassingley parallel.\\		
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\Procedure{manager}{S}
+					\For{$i\ from\ 1\ to\ N$}
+						\State $a \gets $ portion i of S
+						\State send($node_i$, a)
+					\EndFor
+					
+					\State $sum \gets 0$
+					\For{$i\ from\ 1\ to\ N$}
+						\State receive($node_i$, result)
+						\State $sum \gets sum + result$
+					\EndFor
+					
+					\State $avg \gets \frac{sum}{len(S)}$
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+  	
+  		Now we will define the worker
+  		
+  		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\Procedure{worker}{}
+					\State recieve(manager, work)
+					\State $sum \gets 0$
+					\For{$n\ in\ work$}
+						\State $sum \gets sum + n$
+					\EndFor
+					
+					\State send(manager, sum)
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+\end{document}

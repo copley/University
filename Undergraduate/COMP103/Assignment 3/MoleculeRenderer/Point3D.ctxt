@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=x\ y\ z
+comment0.target=Point3D(double,\ double,\ double)
+comment1.params=
+comment1.target=Point3D()
+comment2.params=
+comment2.target=double\ getX()
+comment3.params=
+comment3.target=double\ getY()
+comment4.params=
+comment4.target=double\ getZ()
+numComments=5

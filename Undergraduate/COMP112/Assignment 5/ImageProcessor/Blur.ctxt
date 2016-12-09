@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=origonal
+comment0.target=float[][][]\ Blur(float[][][])
+comment0.text=\r\n\ Takes\ an\ image\ and\ applys\ a\ simple\ blur\ to\ it\ \r\n
+numComments=1

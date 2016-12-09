@@ -1,0 +1,82 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{float}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+
+\title{NWEN 303 Assignment 3}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+	\section{Question 1} 
+		\subsection{a}
+			A weather simulation model consists of a number of equations. These equations can be separated and solved independently, therefor a parallel system would be well suite. However we could also think of it as a concurrent system. In this situation we could be running multiple simulations for different locations at the same time.
+		
+		\subsection{b}
+			Concurrent would be the best choice for this problem. The server will receive a number of requests from users, we want to be able to serve these requests at the same time. Perhaps this could also be seen as a Parallel system i.e. We have the task of serving all requests and we are breaking this big task up into a number of smaller tasks (each smaller task for responding to one request). However it dosnt seem natural to say that all the requests are one big task as we dont start with all the tasks we just receive them over time.
+		
+		\subsection{c}
+			A distributed system is a natural fit here. We have a number of different physical parts (the different airlines websites/servers) and they are connected by some network (the internet) so the booking system can present all the prices/flights in one place.	
+		
+		\subsection{d}
+			\paragraph{latency} is defined by the time taken for one bit to travel from the source to the destination. 
+			
+			\paragraph{bandwidth} is defined by   the number of bits that can travel between the source and destination in a given time period.
+		
+		\subsection{e}
+			The speed up is defined as $speedup = \frac{T(1)}{T(N)}$. Therefor we have the speed up of the program as $speedup = \frac{T(1)}{T(10)} = \frac{1}{2} = 0.5$
+			
+			This sub optimal speedup could be caused by the overhead of the paralization combined with the program not properly utilizating the paralization.
+  	
+  	\section{Question 2}
+  		The key difference between the two is where the memory is. With a SMP system we will have a number of identical processors connected to a single shared memory resource, this would mean that the time to look up something in memory should be the same across all the processes. Compared to NUMA system where each processor will have its own memory resource, all the processes are linked by a communication network. So all the memory is still accessible from each of the processors. However this means that if a processor is looking something up in its local memory its faster, however looking something up in another processes memory would take longer.\\
+  		
+  		A NUMA system would be more effective in a situation where processes where mostly only looking at there local memory, and a SMP system would likely work better if there was a lot of sharing between the processes.
+  	
+  	\section{Question 3}
+		P1's request is likely to take less time as it is accessing its own memory resource so it doesn't have to make any request over the network linking the processors. Where as P3 will have to make a request over the network as it is trying to access P2's memory.  		
+  		
+  	\section{Question 4}
+  		Say we have a NUMA system with three modules. If P1 wants to read to P3's memory then the following happens
+  		
+  		\begin{enumerate}
+  			\item R1 sends request
+  			\item R3 sees request gets data from M3.
+  			\item Puts data on network
+  			\item R1 reads the data to P1 
+  		\end{enumerate}
+  	
+		So to write the process would be the same just in reverse. Say P1 wants to write to P3, so R1 would start by sending the data to R3 which would then read the data and save it to M3. In ether case we are doing only one read and one write to the network so no most likely it wouldn't take any longer.
+  	
+  	\section{Question 5}
+		We must wait for the pipeline to be full of rows, for a given node to receive a column vector and for that node to pass the column on before work can begin. Work can only begin at time $t7$ in the example. As this is the first point that a part of the output is computed. Before time $t7$ the only thing happening was information being passed down the pipeline.
+  	
+  	\section{Question 6}
+		We start by passing rows of the first matrix through the pipeline, until the pipeline is full, at this stage the coordinator will be feeding rows from the top of the matrix into the pipeline. When passing the rows down the pipeline we want to do it so the last worker has the first row to enter the pipeline, this makes reconstructing the final solution easier (as we can just append every row leaving the pipeline to the bottom of the solution).\\
+		
+		Then just like before the coordinator will pass down the columns of the second matrix with each worker computing the product before passing the column on. Once all the computations have been finished we pass the resultant rows to the coordinator. Because of the way we filled the pipeline as the coordinator empty's it we can just append each of the rows to the bottom of our total solution. Then we repeat this process for the rest of the rows.\\
+  	
+\end{document}

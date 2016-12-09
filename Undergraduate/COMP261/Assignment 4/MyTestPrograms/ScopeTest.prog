@@ -1,0 +1,17 @@
+$var = 1;
+
+if ($var == 1) {
+ move;
+ 
+ $var = 2;
+ 
+ if ($var == 2) {
+  move;
+ }
+ 
+ $var = 3;
+}
+
+if ($var == 1) {
+move;
+}

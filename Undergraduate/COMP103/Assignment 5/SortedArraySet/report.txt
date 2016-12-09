@@ -1,0 +1,55 @@
+COMP 103 Assignment 5
+Report on SortedArraySet testing and benchmarking
+
+Name:
+
+Testing:
+Which test methods succeeded or failed on your implementation of SortedArraySet:
+
+My implementation of sorted array set passed all the tests
+
+
+
+
+
+Performance Benchmarking:
+What were the results of your timing tests?
+(Give the time to load the dictionary and the time to check the story, for 
+  - SortedArraySet, ArraySet, and HashSet.
+  - dictionaryUnsorted.txt and dictionarySorted.txt 
+
+Set Class      | Unsorted Loading | Unsorted Checking | Sorted Loading | Sorted Checking |
+------------------------------------------------------------------------------------------
+SortedArraySet : 53.326           | 0.231             | 0.207          | 0.282           |
+ArraySet       : 174.148          | 93.060            | 172.697        | 99.056          |
+HashSet        : 0.182            | 0.139             | 0.178          | 0.171           |
+------------------------------------------------------------------------------------------
+
+SortedArraySet: The loading on the sorted dictonary is alot faster than the unsorted which would make sense because
+you are only having to add to the end, which means you arnt having to move any items down the array as you add. The
+checking is roughly the same between the sorted and unsorted which would make sense because when you are checking
+regardeless which file you started with by the time you are checking the list will be the same.
+
+ArraySet: The loading takes about the same time regardless of what list you are loading, and this sounds right
+because the ArraySet dosnt sort them so even if we are putting the words into the set in order, it will still do the
+same number of comparasons as if we wernt. The checking, 
+
+HashSet: The hash set is consistantly the same speed regardeless of what text file we are using, im not quite sure
+how it works however.
+
+Interpolation Search:
+I got some strange results when testing my interpolation search, the inserting took the same time as the SortedArraySet
+took without the interpolation search, because when adding it will always use binary search becasue it can tell you where
+the word shoud be inserted. However with the checking which i would of thought should be the same wasnt, i got it to take
+18.592 when using the unsorted file, and 11.164 when using the sorted file. This result dosnt make sense to me because
+it should take the same ammount of time for the same reason that the SortedArraySet with binary search should. Im not sure
+where the bug in my code that is causing this however.
+
+Also to get better results when using the interpolation search you would want to have a diffrent comparator because at the
+moment i am just using compareTo and for strings i dont think this gives the best results
+
+
+
+
+
+

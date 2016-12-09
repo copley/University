@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=x\ y\ z\ radius\ c
+comment0.target=Atom(int,\ int,\ int,\ double,\ java.awt.Color)
+comment1.params=
+comment1.target=int\ getX()
+comment2.params=
+comment2.target=int\ getY()
+comment3.params=
+comment3.target=int\ getZ()
+comment4.params=
+comment4.target=double\ getRadius()
+comment5.params=
+comment5.target=java.awt.Color\ getColor()
+comment6.params=o\ angle
+comment6.target=int\ further(Atom,\ double)
+comment6.text=\r\n\ Taken\ from\ provided\ code\r\n
+comment7.params=g2d\ panAngle\ tiltAngle\ zoom
+comment7.target=void\ draw(java.awt.Graphics2D,\ double,\ double,\ double)
+numComments=8

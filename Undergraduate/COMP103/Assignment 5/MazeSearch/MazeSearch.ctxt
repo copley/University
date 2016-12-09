@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=size
+comment0.target=MazeSearch(int)
+comment0.text=\r\n\ Creates\ a\ new\ maze\ using\ MazeGenerator\ and\ draws\ it\ to\ the\ UI\ class.\r\n
+comment1.params=
+comment1.target=void\ draw()
+comment1.text=\r\n\ Draws\ the\ maze.\ This\ method\ should\ be\ called\ once\ after\ creating\ a\ new\ maze\ to\ draw\ it\ to\r\n\ the\ UI\ class.\r\n
+comment2.params=cell\ color\ redraw
+comment2.target=void\ drawCell(Cell,\ java.awt.Color,\ boolean)
+comment2.text=\r\n\ Draws\ a\ specific\ cell.\ This\ method\ will\ fill\ the\ interior\ of\ a\ cell\ with\ the\ specified\ color.\r\n\ The\ redraw\ parameter\ is\ passed\ to\ the\ UI\ class,\ and\ if\ it\ is\ true\ this\ method\ will\ delay\r\n\ returning\ for\ a\ while\ so\ that\ the\ user\ has\ time\ to\ see\ the\ change.\r\n
+comment3.params=from\ to\ color\ redraw
+comment3.target=void\ drawPassage(Cell,\ Cell,\ java.awt.Color,\ boolean)
+comment3.text=\r\n\ Draws\ a\ passage\ between\ two\ cells,\ filling\ both\ the\ cells\ and\ the\ space\ between\ them\ with\ the\r\n\ specified\ color.\ The\ redraw\ parameter\ is\ passed\ to\ the\ UI\ class,\ and\ if\ it\ is\ true\ then\ this\r\n\ method\ will\ delay\ returning\ for\ a\ while\ so\ that\ the\ user\ has\ time\ to\ see\ the\ change.\r\n
+comment4.params=
+comment4.target=void\ run()
+comment4.text=\r\n\ Run\ the\ exploration\ algorithm.\r\n
+comment5.params=cell
+comment5.target=void\ explore(Cell)
+comment5.text=\r\n\ Mark\ the\ current\ cell\ as\ visited,\ then\ recursively\ explore\ the\ cell's\ neighbouring\ cells.\r\n\ Before\ exploring\ a\ cell\ draw\ a\ passage\ between\ the\ current\ cell\ and\ the\ cell\ you\ are\ about\ to\r\n\ explore\ in\ yellow,\ and\ after\ exploring\ a\ cell\ draw\ the\ same\ passage\ in\ red.\r\n\ <p/>\r\n\ If\ you\ have\ found\ the\ exit\ cell\ you\ should\ set\ 'finished'\ to\ true,\ then\ return\ without\ drawing\r\n\ anything.\r\n
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7

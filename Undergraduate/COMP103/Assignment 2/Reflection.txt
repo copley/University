@@ -1,0 +1,39 @@
+/* Reflection.txt for COMP103
+ * Name:
+ * Usercode:
+ * ID:
+ */
+
+For your reflection:
+====================
+
+Characterise the different collection classes that you have used in this assignment.  
+
+Why is the Map different from the other collections? (eg, it isn't even a subtype
+of the Collection type).
+
+What is the advantage of declaring a variable to be of type List<Card> but then
+putting a new ArrayList<Card>() into the variable? Why not just declare the
+type to be ArrayList<Card> ?
+
+In FastFood, you needed to iterate down the queue to draw the queue of
+orders. Why is this a violation of the Queue type?  Why do you think Java
+allows you to do it anyway?  What might be a disadvantage of Java allowing you
+to do this?
+
+--------------------------------------------------------------------
+
+The collection classes i used where a HashMap, which contains a key to value mapping. A queue which is First In First 
+Out, meaning that the first object you add will be the first one you get when you remove from the queue. And finally i
+used a Set which is just a bunch of words with no order and no duplicates.
+
+A map stores a relationship between a value and a key, which is unlike other collections that only have values.
+
+It means it can be any implementation of list, one example of how this is useful is if you have a function that
+takes a list it wont matter what implementation you pass it.
+
+This is a violation of the Queue type because you can look at all the elements of the queue without having to remove
+them all, I think java allows you to do this because like in the FastFood program where you had to draw them, and having
+to remove them all and then put them all back on the queue would be annoying. There are cases where its useful to be able to
+itterate through all the elements of a queue. The disvantage of this is that it makes the Queue type less a queue and more
+a just a simple list that only allows you to add to the back and remvoe from the front.

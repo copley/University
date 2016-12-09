@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=image
+comment0.target=float[][][]\ RemoveRedeye(float[][][])
+comment0.text=\r\n\ Takes\ an\ image\ as\ input\ and\ removes\ any\ red\ eyes\ from\ it.\r\n\ \r\n\ NOTE\:\ Sometimes\ there\ is\ some\ error\ with\ this,\ for\ example\ it\ will\r\n\ think\ there\ are\ red\ eyes\ where\ there\ are\ none\ if\ the\ image\ has\ a\r\n\ high\ ammount\ of\ red.\ How\ ever\ i\ tried\ to\ design\ it\ in\ a\ way\ that\ wouldent\r\n\ be\ effected\ by\ an\ image\ having\ more\ red\ it\ in.\r\n
+comment1.params=image
+comment1.target=float[][][]\ SharpenImage(float[][][])
+comment1.text=\r\n\ Takes\ an\ image\ and\ applys\ a\ sharpering\ filter\ to\ it\r\n
+comment2.params=image
+comment2.target=float[][]\ ToBinaryMask(float[][][])
+comment2.text=\r\n\ Creates\ a\ binary\ mask\ from\ the\ image\ ie\ where\ there\ is\ a\ red\ eye\ pixle\r\n\ in\ the\ image,\ at\ the\ same\ position\ in\ the\ binary\ mask\ there\ will\ be\ a\ 1\r\n
+comment3.params=binaryMask
+comment3.target=CollectGroups(float[][])
+comment3.text=\r\n\ Finds\ all\ the\ groups\ of\ the\ red\ eye\ pixles\ in\ the\ image\ and\ returns\ them\r\n\ in\ an\ array\ list\r\n
+numComments=4

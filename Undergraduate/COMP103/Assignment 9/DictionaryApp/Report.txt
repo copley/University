@@ -1,0 +1,35 @@
+Student ID:
+
+MARKER'S GUIDE
+==============
+I attempted / completed the following methods:
+(list one method per line below in the form className.methodName)
+
+BSTSet.contains
+BSTSet.add
+BSTSet.height
+BSTNode.contains
+BSTNode.add
+BSTNode.height
+
+BSTSet.minDepth
+BSTSet.remove
+BSTNode.minDepth
+BSTNode.remove
+BSTNode.replacementSubtreeFromChildren
+BSTNode.getLeftmostNode
+
+BSTSet Itterator Functions
+BSTNode.rotateLeft
+BSTNode.rotateRight
+
+
+REPORT
+======
+Height of the BST 
+	after loading dictionary.txt: 37
+	after removing bad-words.txt: 37
+
+Minimum of the all the branch lengths in the BST 
+	after loading dictionary.txt: Imbalance of 1
+	after removing bad-words.txt: Imbalance of 1

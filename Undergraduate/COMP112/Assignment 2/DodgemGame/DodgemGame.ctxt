@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DodgemGame()
+comment0.text=\ Constructor\r\n\ Set\ up\ the\ GUI,\r\n\ Draw\ the\ arena\r\n
+comment1.params=
+comment1.target=void\ run()
+comment1.text=\ Run\ the\ game\r\n\ Infinite\ loop\ to\ make\ the\ cars\ move\:\r\n\ Each\ time\ round\ the\ loop\:\r\n\ \ Check\ that\ car1\ and\ car2\ are\ not\ null,\ and\ that\ both\ cars\ have\ some\ life\ left,\r\n\ \ If\ there\ are\ no\ cars\ yet,\ or\ either\ car\ is\ dead,\r\n\ \ \ then\ just\ sleep\ for\ a\ short\ while,\ to\ wait\ for\ the\ users\ to\ restart\ the\ cars.\r\n\ \ If\ the\ cars\ exist\ and\ have\ some\ life,\ then\r\n\ \ -\ move\ each\ car\ one\ step,\r\n\ \ -\ call\ methods\ on\ the\ two\ cars\ to\ check\ for\ the\ different\ types\ of\ collisions\r\n\ \ \ \ (Core\:\ just\ with\ walls;\ Completion\:\ with\ obstacle\ and\ each\ other)\r\n\ \ -\ redraw\ the\ game\ (cars,\ arena,\ and\ life\ status)\r\n
+comment2.params=
+comment2.target=void\ resetGame()
+comment2.text=\r\n\ Reset\ the\ game\ with\ two\ new\ cars\ in\ the\ starting\ positions.\r\n\ ie,\ create\ two\ new\ DodgemCar\ objects\ and\ assign\ to\ car1\ and\ car2\r\n
+comment3.params=
+comment3.target=void\ redraw()
+comment3.text=\r\n\ Redraws\r\n\ -\ the\ arena\ and\ obstacle\r\n\ -\ the\ two\ cars\r\n\ -\ the\ status\ of\ the\ cars\ \ (Completion)\r\n\ Hint\:\ make\ separate\ methods\ for\ the\ arena\ and\ the\ status\r\n\ Hint\:\ don't\ forget\ to\ repaint\ the\ Graphics\ pane\ after\ redrawing\ everything.\r\n
+comment4.params=arguments
+comment4.target=void\ main(java.lang.String[])
+comment4.text=\r\n\ Create\ a\ new\ DodgemGame\ object\ (which\ will\ set\ up\ the\ interface)\r\n\ and\ then\ call\ the\ run\ method\ on\ it,\ which\ will\ start\ the\ game\ running\r\n
+numComments=5

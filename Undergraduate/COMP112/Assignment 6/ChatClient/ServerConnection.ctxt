@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=s\ p
+comment0.target=ServerConnection(java.lang.String,\ int)
+comment1.params=
+comment1.target=boolean\ connect()
+comment2.params=
+comment2.target=void\ run()
+comment3.params=
+comment3.target=void\ run()
+comment4.params=
+comment4.target=void\ disconnect()
+comment5.params=
+comment5.target=boolean\ isConnected()
+comment6.params=message
+comment6.target=void\ send(java.lang.String)
+comment7.params=
+comment7.target=IRCMessage\ read()
+comment8.params=
+comment8.target=void\ sendLoop()
+comment9.params=
+comment9.target=void\ readLoop()
+numComments=10

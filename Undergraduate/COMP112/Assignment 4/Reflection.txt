@@ -1,0 +1,65 @@
+Briefly describe your scheme for representing the state of the board.
+Was it efficient in file size?
+  If so, explain why.
+     Would it still be efficient when there were 100 tiles on the board? 
+  If not, explain why not and suggest a more efficient scheme.
+  
+Answer 1:
+
+My method was to have a SaveGame class that would handle saving and loading the game, each class would have a save and load function.
+Looking back on it now i should of used an interface for this but i dident have time to make the change. Each class that had to save something
+would have a save game key ( or multiple keys depending on how much data would be saved ) then it would pass the data it wanted to save to the 
+save game class with the key and the save game calss would handle how it was stored. Then when you loaded the game the load function would retreve the data
+contained under its key. This ment that if i wanted to add more data it would be easier also it ment i dident have to worry about where the data was located
+in the file becasue it dident matter. But again as i said before it would of been better to have each class that wanted to save something implement an interface
+called saveable and it would force the class to have a save and load function.
+
+I suppose my file size wouldent of been effecant becasue of the way it saved the board, it had a grid 15*15 in the save file. A better way of doing this would of been 
+to just store the cells that had a tile in them with there x and y but i just thought it would be easier to understand the save game if it was saved this way. This means that it
+would take up almost the same ammount of space when there where 100 tiles on the board as oposed to 0. Also i put alot of spaces in so it was easier to read, if you where really 
+conserned with the size that could be removed aswell.
+
+Explain how run-length coding could reduce the size of the 
+pbm image below.  What sorts of images would it work badly on? Is it
+possible to make a compression scheme that could reduce the size of any possible
+image?
+
+P1
+10 10
+1 1 1 1 1 1 1 1 1 1
+1 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 0 0 0 1
+1 0 0 0 0 0 1 1 1 1
+1 0 0 0 0 1 1 1 1 1
+1 0 0 0 1 1 1 1 1 1
+1 0 0 0 0 0 0 0 0 1
+1 0 1 0 1 0 1 0 1 1
+1 0 0 0 0 0 0 0 0 1
+1 1 1 1 1 1 1 1 1 1
+
+Answer 2:
+
+it would compress the image above quite well, for example you could turn the top row into 10*1 or something depending on how you wanted to format it. You would take each line
+and group the colors so you would have <count> * <color>, this way rather than having 20 chars ( including spaces ) for the top row you could reduce it to 4.
+
+This perticular way of doing it would would make it much less effecant for compressing color images as they consist of an R, G and B value for each color, it would still work 
+reasonabley well for grey scaleimages however. The way i implemented run-length coding made it work well for color because rather than treating each color as a collection of 3
+integers i converted the RGB color to be represented by a sngle color which is equlivant but allowd it to be compressd by run-length coding because for example if you had two colors
+that where the same in a line e.g.
+
+234 123 56 234 123 56
+
+Using the origonal method of run length coding you would end up with
+
+1*234 1*123 1*56 1*234 1*123 1*56
+
+sinse these are the same color you would want to be able to somehow represent that there where 2 but use less bytes than just having them both there. So if you represent the RGB vals with
+just a single integer e.g.
+
+15366968 15366968
+
+then you can compress this into
+
+2*15366968
+
+This makes the compression work for any type of netpbm image, and it can provide a considerable reduction in size

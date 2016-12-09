@@ -1,0 +1,10 @@
+True False
+A	B	C
+True	true	true	true
+True	true	true	false
+True	true	false	true
+True	true	false	false
+True	false	true	true
+False	false	true	false
+False	false	false	true
+False	false	false	false

@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=origonal\ point1\ point2
+comment0.target=float[][][]\ CropAndZoom(float[][][],\ int[],\ int[])
+comment0.text=\r\n\ Takes\ the\ origonal\ image\ and\ two\ points,\ the\ starting\ an\ finishing\ point,\ one\ will\ be\ top\ left\ and\ one\r\n\ will\ be\ bottom\ right.\ Returs\ the\ area\ contained\ between\ the\ two\ points\ zoomed\ in\ on\r\n
+numComments=1

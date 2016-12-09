@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SpellingChecker()
+comment1.params=button
+comment1.target=void\ buttonPerformed(java.lang.String)
+comment2.params=file
+comment2.target=java.util.ArrayList\ getDictionary(java.lang.String)
+comment3.params=file
+comment3.target=java.util.ArrayList\ readFile(java.lang.String)
+comment4.params=documentWords\ words
+comment4.target=void\ checkFile(java.util.ArrayList,\ java.util.Set)
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

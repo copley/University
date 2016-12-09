@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{listings}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+
+\title{COMP 312 Assignment 2}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+  	\section{Python}
+  		\subsection{Dice Problem}
+  			\subsubsection{Part A}
+  				\lstinputlisting[language=Python]{Programs/01.py}
+  				
+  				The output of this program is $0.491206$ so yes the probability of the event occurring is less than $\frac{1}{2}$. The value of n was very large so we can be confident in this finding.
+  				
+  			\subsubsection{Part B}
+  				\lstinputlisting[language=Python]{Programs/02.py}
+  				
+  				The modified code calculates the probability of the event occurring with a different number of throws. Over the range 24 to 26 it outputs the the following $\{24: 0.491443, 25: 0.506207, 26: 0.518883\}$
+  				
+  				From this we see that it requires 25 throws for the probability to be $ > \frac{1}{2}$ but as close to $\frac{1}{2}$ as possible
+  				
+  				
+  		\subsection{Optimized Table Look-up}
+  			\lstinputlisting[language=Python]{Programs/03.py}
+			
+			The output from running this code is
+			\newline
+			
+			\begin{center}
+				\begin{tabular}{ c c c}
+				Part I & Part II & Part III\\
+				3.750354 & 3.750114 & 3.750704\\
+				4.750354 & 2.249886 & 2.064436\\
+				
+				\end{tabular}
+			\end{center}						
+			
+			As we can see from this all results are mostly the same. We also see that option 2 and 3 take about half as many steps as option 1. However option 3 is just slightly faster
+			
+	
+	\section{Queues}			  			
+		\subsection{Problem 3}
+			We know that the service times are distributed exponentially. And we assume that all the servers have equal average service times, let this time be $m$. Once one of the other services has finished you can begin being served (you are now 'racing' against the remaining 6 people). As the exponential distribution has the property of being memory-less all the services have the same probability of taking time $m$. This means that $\frac{6}{7}$ probability of finishing before atleast one of the other customers being served.
+			
+		\subsection{Problem 4}
+			$state \gets $ number of active pizza shops\newline
+		
+			For this problem I used python to compute the steady state vector. The following code is what I used to do this.
+			\lstinputlisting[language=Python]{Programs/pizza.py}  			
+  			
+			To get the average state of the system we take the following sum
+			
+			\begin{align*}
+				\sum_{n = 0}^{32} n\pi_n
+			\end{align*}			  			
+  			
+			for which we get the following result  			
+  			
+  			\begin{align*}
+  				Avg\ number\ of\ pizza\ shops:\ 27.6082698882
+  			\end{align*}
+  			
+			To get the fraction of time spent in state $i$ we know this value is $\pi_i$ so if we want to find the fraction of time with 20 or more restaurants this is
+			
+			\begin{align}
+				\sum_{n = 20}^{32} \pi_n = 0.999741852504
+			\end{align}					
+  			
+  			\begin{align}
+  				Fraction\ of\ time\ with\ >\ 20\ restrants:\ 0.999741852504
+  			\end{align}
+\end{document}

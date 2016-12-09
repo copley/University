@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=t\ height\ width\ colorDepth\ compressed\ data
+comment0.target=Image(java.lang.String,\ int,\ int,\ int,\ boolean,\ java.lang.String)
+comment1.params=data
+comment1.target=void\ parseImageData(java.lang.String)
+comment1.text=\n\ Function\ that\ each\ class\ extending\ this\ one\ must\ implement.\ It\ handles\ the\ parsing\ of\ non\ compressed\n\ image\ data\n
+comment2.params=data
+comment2.target=void\ parseCompressedImageData(java.lang.String)
+comment2.text=\n\ Parses\ compressed\ image\ data.\ This\ can\ be\ a\ generic\ function\ because\ \n
+comment3.params=
+comment3.target=java.lang.String\ getCompressedImage()
+comment3.text=\n\ Returns\ the\ image\ compressed\ using\ run\ length\ encoding.\ the\ image\n\ metadata\ is\ included.\n\ \n\ Got\ information\ on\ Run\ Length\ Encoding\ from\n\ http\://en.wikipedia.org/wiki/Run-length_encoding\n
+comment4.params=
+comment4.target=void\ draw()
+comment4.text=\n\ Function\ draws\ the\ image\ to\ the\ screen\n
+numComments=5

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=size
+comment0.target=MazeGeneratorPrims(int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MazeGeneratorPrims\r\n
+comment1.params=nodes
+comment1.target=void\ generate(java.util.Map)
+comment2.params=
+comment2.target=void\ draw()
+comment3.params=cell\ color\ redraw
+comment3.target=void\ drawCell(Cell,\ java.awt.Color,\ boolean)
+comment4.params=
+comment4.target=Cell\ getEntrance()
+comment5.params=
+comment5.target=Cell\ getExit()
+comment6.params=f\ c
+comment6.target=void\ addTouching(java.util.ArrayList,\ Cell)
+numComments=7

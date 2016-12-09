@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ImageRenderer()
+comment1.params=
+comment1.target=void\ draw()
+comment1.text=\n\ This\ function\ draws\ the\ images,\ should\ constantly\ be\ running\ so\ if\ there\ are\ multiple\ images\ it\ will\ draw\ them\ in\ a\ loop\n
+comment2.params=b
+comment2.target=void\ buttonPerformed(java.lang.String)
+comment2.text=\n\ Handles\ the\ button\ events\n
+comment3.params=fname
+comment3.target=void\ renderImage(java.lang.String)
+comment3.text=\n\ Renders\ a\ pnm\ image\ file.\n\ Asks\ for\ the\ name\ of\ the\ file,\ then\ renders\ the\ image\ at\ position\ (left,\ top).\n\ Each\ pixel\ of\ the\ image\ is\ rendered\ by\ a\ square\ of\ size\ pixelSize\n\ The\ first\ three\ tokens\ (other\ than\ comments)\ are\n\ \ \ \ the\ magic\ number\ (P1,\ P2,\ or\ P3),\n\ \ \ \ number\ of\ columns,\ (integer)\n\ \ \ \ number\ of\ rows,\ \ (integer)\n\ ppm\ and\ pgm\ files\ then\ have\ \n\ \ \ \ colour\ depth\ \ (integer\:\ range\ of\ possible\ color\ values)\n\ The\ remaining\ tokens\ are\ the\ pixel\ values\n\ \ (0\ or\ 1\ for\ pbm,\ single\ integer\ for\ pgm;\ red,\ green,\ and\ blue\ integers\ for\ ppm)\n\ There\ may\ be\ comments\ anywhere\ in\ the\ file,\ which\ start\ with\ \#\ and\ go\ to\ the\ end\ of\ the\ line.\ Comments\ should\ be\ ignored.\n\ The\ image\ may\ be\ "animated",\ in\ which\ case\ the\ file\ contains\ a\ sequence\ of\ images\n\ (ideally,\ but\ not\ necessarily,\ the\ same\ type\ and\ size),\ which\ should\ be\ rendered\n\ in\ sequence.\n\ This\ method\ should\ read\ the\ magic\ number\ then\ call\ the\ appropriate\ method\ for\ rendering\ the\ rest\ of\ the\ image\n
+comment4.params=fname
+comment4.target=Image[]\ readFile(java.lang.String)
+comment4.text=\n\ Function\ reads\ in\ an\ image\ file\ and\ returns\ an\ array\ of\ images\n
+comment5.params=s
+comment5.target=java.lang.String\ removeComment(java.lang.String)
+comment5.text=\n\ Function\ takes\ a\ string\ and\ removes\ any\ comments\ from\ it\ \n
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7

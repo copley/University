@@ -1,0 +1,35 @@
+/* Reflection.txt for COMP103
+ * Name:
+ * Usercode:
+ * ID:
+ */
+
+For your reflection:
+====================
+
+Firstly, describe how far you got, on this assignment. If there was a problem
+you got stuck on, what was that problem?
+
+Reading and understanding someone else's code is difficult.  What elements of
+Sokoban made it easier or made it  more difficult for you to understand?  Can
+you identify things that you would do or avoid doing if you were trying to make
+your own code easily understood by someone else?
+
+What is the point of comparators?  Why are they necessary in general? Could you
+suggest an alternative way of solving the same problems that didn't involve
+having to make these additional classes?
+
+--------------------------------------------------------------------
+
+I got stuck on the math for the molecule renderer, i just couldent figure out how they got the distance formula they had
+and this ment that i was unable to fix it to work with tilting, alltho i still added some tilting functionaity. On the sokoban problem
+i was able to finish it all
+
+The comments where very helpful when trying to understand the code, If i was trying to make my code easy for other people read
+i would add comments to the top of functions to explain what they are doing, and if there was some complicated code i would comment
+that as well. Another way to make code understandble is to break it up, so rather than hving very long functions i would try make it in to alot
+of smaller functions
+
+Comparators are used to add a layer of abstraction to the sorting of lists. I wouldent say that comparators are necessary becasuse you are able to 
+sort lists without it but it just provides a way to make it easyier without the programmer having to worry about implemeting the sorting. If you wanted to
+sort a list without the use of a comparator you could write your own implementation of merge sort or another sorting algorythm

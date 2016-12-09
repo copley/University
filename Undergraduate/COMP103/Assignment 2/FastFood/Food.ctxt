@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=t
+comment0.target=Food(FoodType)
+comment1.params=x\ y
+comment1.target=void\ draw(int,\ int)
+comment2.params=
+comment2.target=double\ getPrice()
+comment3.params=
+comment3.target=FoodType\ getType()
+comment4.params=
+comment4.target=boolean\ isFoodReady()
+comment5.params=
+comment5.target=void\ foodIsReady()
+numComments=6

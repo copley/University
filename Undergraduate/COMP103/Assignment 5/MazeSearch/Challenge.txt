@@ -1,0 +1,15 @@
+The algorythm i am using is Prims algorythm and its not a recursive one as oposed to the the one the code used which
+is the recursive backtracking one. My one creates a much more horizontal maze but this could be changed by changing how
+you choose which cell to attach the "frontier" cell to, i am doing it using if else statments meaning its more likely to
+connect it to one touching horizonally but sinse it dosnt matter you could do it randomly or how ever you want.
+
+Prims algorythm works by starting from a cell chosen by some metric and sets it to be part of the maze
+and then it adds suronding cells to the "frontier" cells, then it starts a loop which each time it will
+take a random cell from the "frontier" cells and join it to a touching cell that is part of the maze, then it
+sets the selected cell to be part of the maze and adds the suronding cells to the "frontier" untill there are no
+remaining cells in the "frontier" list.
+
+The recursive backtracking algorythm works a similar way, where you start with a cell and randomly choose an adjcent cell that has
+not been visited and them make a passage to the chosen cell and then repeat with the chosn cell, if a cell has no
+adjcent cells that havent been visited then you return up the stack untill you reach a place where there is. The process
+finishes when there are no more cells to visit.

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=dp
+comment0.target=DiagramPrinter(DiagramPane)
+comment1.params=g\ pf\ page
+comment1.target=int\ print(java.awt.Graphics,\ java.awt.print.PageFormat,\ int)
+numComments=2

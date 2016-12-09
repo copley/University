@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{listings}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\title{COMP 312 Assignment 7}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+  	\section{Python}
+  		\subsection{Program A}
+			\subsubsection{Code}
+				\lstinputlisting[language=Python]{Programs/01.py}
+			\subsubsection{Output}
+				Lambda = 1\\
+				Estimate of W: 3.26472367151\\
+Conf int of W: (3.2488630500389366, 3.280584292989257)\\
+
+Estimate of L: 3.26905934434\\
+Conf int of L: (3.2481626576521117, 3.289956031026612)\\\\
+
+				Lambda = 1.4\\
+				Estimate of W: 5.27502175978\\
+Conf int of W: (5.2113909913800276, 5.3386525281750901)\\
+
+Estimate of L: 7.39460960176\\
+Conf int of L: (7.2956646964018264, 7.4935545071161238)\\
+				
+				Lambda = 1.6\\
+				Estimate of W: 8.88431876814\\
+Conf int of W: (8.6294892979862041, 9.1391482382906801)\\
+
+Estimate of L: 14.2139801084\\
+Conf int of L: (13.788264932464067, 14.639695284252635)\\\\
+
+				Lambda = 1.8\\
+				Estimate of W: 50.9382817297\\
+Conf int of W: (44.339013047433241, 57.537550411953703)\\
+
+Estimate of L: 90.5524817225\\
+Conf int of L: (78.81803465053963, 102.28692879440669)\\
+
+
+  		
+  		
+  		\subsection{Program B}
+  			\subsubsection{Code}
+				\lstinputlisting[language=Python]{Programs/02.py}
+			\subsubsection{Output}
+				Estimate of W0: 4943.04818104\\
+Conf int of W0: (4898.3210316269033, 4987.7753304614289)\\
+
+Estimate of W1: 4985.24543653\\
+Conf int of W1: (4939.9264150329, 5030.5644580285843)\\
+
+Estimate of W2: 4977.50494534\\
+Conf int of W2: (4937.3688100317413, 5017.6410806387121)\\
+
+Estimate of L0: 1.20182218568\\
+Conf int of L0: (1.1806983072381694, 1.2229460641316552)\\
+
+Estimate of L1: 1.17795497502\\
+Conf int of L1: (1.146837330909527, 1.2090726191268364)\\
+
+Estimate of L2: 2.6202228393\\
+Conf int of L2: (2.5774359912704954, 2.6630096873233171)\\
+
+
+	\section{Code Used For MVA}
+		\lstinputlisting[language=Python]{Programs/mva.py}
+
+\end{document}

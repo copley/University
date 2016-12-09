@@ -1,0 +1,298 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{float}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+
+\title{NWEN 303 Assignment 2}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+  	\section{Readers and Writers}
+  		\subsection{a}
+  			For this problem we only need modify the StartR and EndR operations
+  			
+  			\begin{algorithm}[H]
+				\begin{algorithmic}[1]
+					\Procedure{StartR}{}
+						\If{$nw\ !=\ 0$}
+							waitC(OKR)
+						\EndIf
+						
+						\State $nr \gets nr\ +\ 1$
+						\State $signalC(OKR)$
+					\EndProcedure
+					
+					\Procedure{EndR}{}
+						\State $nr \gets nr\ +\ 1$
+						\If{$nr\ ==\ 0$}
+							signalC(OKW)
+						\EndIf
+					\EndProcedure
+				\end{algorithmic}
+			\end{algorithm}
+			
+			When a process starts a read and gains permission to read then $nr$ is incremented by 1.\\		
+			
+			If there are currently processes reading then $nr\ >\ 0$. If another process attempts to start a read then as $nr\ >\ 0$ we know $nw\ =\ 0$ the process will be allowed to read even if there are writers waiting. So we see the rule is satisfy.
+  			
+  			
+  	\subsection{b}
+  		For this problem we only need to modify the EndW operations
+  		
+  		\begin{algorithm}[H]
+  			\begin{algorithmic}[1]
+				\Procedure{EndW}{}
+  					\State $nw \gets nw - 1$
+  					\If{$empty(OKW)$}
+  						\State $signalC(OKR)$
+  					\Else
+  						\State $signalC(OKW)$
+  					\EndIf
+  				\EndProcedure  				
+  			\end{algorithmic}
+  		\end{algorithm}
+  		
+  		When ever we end write operation we first check if there are any processes waiting on the OKW condition, if there are none then we will signal a read process. Otherwise we signal a write process. Giving any waiting write process priority. Satisfying the rule.
+  		
+  	\subsection{c}
+  		For this problem we need to modify the monitor init, EndR and EndW operations.
+  		
+		 \begin{algorithm}[H]
+  			\begin{algorithmic}[1]
+  				\Procedure{monitor RW}{}
+  					\State $int\ nr \gets 0$
+  					\State $int\ nw \gets 0$
+  					\State $int\ writeCount \gets 0$
+  					\State $cond\ OKR\ OKW$
+  				\EndProcedure
+  				
+				\Procedure{EndR}{}
+					\State $nr \gets nr - 1$
+					\State $writeCount \gets 0$
+					\If{$nr == 0$}
+						\State $signalC(OKW)$
+					\EndIf
+				\EndProcedure  				
+  				
+  				\Procedure{EndW}{}
+  					\State $nw \gets nw - 1$
+  					\State $writeCount \gets writeCount + 1$
+  					
+  					\If{$writeCount\ >=\ 2$ or $empty(OKW)$}
+  						\State $writeCount \gets 0$
+  						\State $signalC(OKR)$
+  					\Else
+  						\State $signalC(OKW)$
+  					\EndIf
+  				\EndProcedure
+  			\end{algorithmic}
+  		\end{algorithm}
+  		
+		When ever a write ends we increment the writeCount variable by 1. If this variable ever reaches 2 then we have reached the write limits so we reset it to 0 and signal a read process. We see this satisfy the rule as only two consecutive writes can occur.
+  		
+  		
+  		
+	\section{Critical Section Problem}
+		\subsection{a}
+			We define a monitor and two operations, Start and End. We will use the monitor to track how many processes are in there critical section at a time.	
+		
+			\begin{algorithm}[H]
+				\begin{algorithmic}[1]
+					\Procedure{monitor C}{}
+						\State $n \gets 0$
+						\State $cond\ OK$
+					\EndProcedure
+					
+					\Procedure{Start}{}
+						\If{$n = M$}
+							\State $waitC(OK)$
+						\EndIf
+						
+						\State $n \gets n+1$
+					\EndProcedure
+					
+					\Procedure{End}{}
+						\State $n \gets n-1$
+						\State $signalC(OK)$
+					\EndProcedure
+				\end{algorithmic}
+			\end{algorithm}		
+			
+				We want to show that only M processes can be in there critical section at once. When a process calls the start operation, the count is incremented. If a process is uses the start operation when there are already M processes with access then the process waits for the OK condition to be signaled. The OK condition is signaled when one process calls the End operation. Meaning there can only be at most M processes in there critical section at once.
+
+				
+		\subsection{b}
+			\begin{algorithm}[H]
+				\begin{algorithmic}[1]
+					\Procedure{Semaphrore s}{}
+						\State $s.value \gets M$
+						\State $s.waitSet \gets \{\}$
+					\EndProcedure
+					
+					\Procedure{Process}{}
+						\While{true}
+							\State non critical section
+							\State $wait(S)$
+							\State critical section
+							\State $signal(S)$
+						\EndWhile
+					\EndProcedure
+				\end{algorithmic}
+			\end{algorithm}
+			
+			We create a semaphore with a value of M (so there are M permissions). And we initialize the wait set to empty. We see this must satisfy the give rule. Any process attempting to gain a permission will be blocked (and added to the wait set) if the semaphore has already given out M permissions. When another process exits its critical section it will signal the semaphore, giving its permission to another process.
+				
+	
+	\section{Producers and Consumers Revisited}
+		We use a monitor to solve this problem, with a signaling policy of signal and continue. We have a buffer of size N. We want this buffer (of size K) to be circular, so when the head (or tail) reaches the end it should wrap around to overwrite old elements that we have "removed". So we will assume our monitor has two functions $increment(i,K)$ which will increment i and if it is equal to K reset it to 0. and size which will give us the number of elements in the buffer.\\
+		
+		Starting a read or starting a write will give you an index to read from or write to. When a read or write is started the head or tail is updated so that the next process wont be given the same index.\\
+		
+		Of course this courses an issue. What happens if a process starts a read operation and gets given index $i$. Then while it is still reading some operations occur causing the buffer to wrap around, since we have already incremented the head, position $i$ can be written to while a process is still reading from it.\\
+		
+		To solve this the monitor will keep track of whether a buffer index is being accessed and will have a condition variable for each of the buffer positions. So when starting a read or a write before we let the process access the buffer we check if there currently is a process accessing the given position, if there is then we wait for the condition variable assigned to that buffer position to be signaled. When finishing an operation we update a value to say that now that position doesn't have a process accessing it and we signal the condition variable for that buffer position.\\
+		
+		
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State $buffer \gets [K]$
+				\Procedure{Monitor RW}{}
+					\State $head \gets 0$
+					\State $tail \gets 0$
+					\State $cond\ conds[K]$
+					\State $cond\ notEmpty, notFull$
+					\State $num [N]$
+				\EndProcedure			
+			
+				\Procedure{StartR}{}
+					\State $pos \gets head$
+					\If{$length()==0$}
+						\State $waitC(notEmpty)$
+					\EndIf
+					
+					\State $increment(head,K)$	
+					\State $signalC(notFull)$
+					
+					\If{$num[pos] == 1$}
+						\State $waitC(conds[pos])$
+					\EndIf
+					
+					\State $num[pos] \gets 0$
+					\State $return pos$
+				\EndProcedure
+				
+				\Procedure{EndR}{int pos}
+					\State $num[pos] \gets 0$
+					\State $signalC(conds[pos])$
+				\EndProcedure
+				
+				\Procedure{StartW}{}
+					\State $pos \gets tail$
+					\If{$length()==N$}
+						\State $waitC(notFull)$
+					\EndIf
+					
+					\State $increment(tail,N)$
+					\State $signalC(notEmpty)$ 
+					
+					\If{$num[pos] == 1$}
+						\State $waitC(conds[pos])$
+					\EndIf
+					
+					\State $num[pos] \gets 1$
+					\State $return pos$
+				\EndProcedure
+				
+				\Procedure{EndW}{int pos}
+					\State $num[pos] \gets 0$
+					\State $signalC(conds[pos])$
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		
+		Now we will make a more rigorous argument about why is solution satisfy the rule given. We see we can have multiple 
+		
+		We want to have multiple readers and writers accessing the buffer at the same time but ensure that no two processes can access the same position in the buffer. If a process is reading or writing to position $i$ then $num[i]$ will be equal to 1, indicating that that buffer position is currently being accessed. So if a new process attempts to start an operation that will involve index $i$ it will be forced to wait until the $conds[i]$ condition is signaled. This condition is signaled when the process accessing position $i$ ends its operation. For each of the condition variables in the $conds$ array we will use a wait queue so we can ensure actions will happen in the order which they started waiting, this is so if we get a read, then a write the a read to the same index we want the operations to execute in that order otherwise the two read threads could read the same value. This argument guarantees that no two processes will be accessing the same.\\
+		
+		If the buffer is full and a process attempts a write then the process will be forced to wait until a read is started at which point the buffer will not be full. Similar for if a read is attempted while the buffer is empty, the process will be waited until a write has started. Note that while it might not make sense to signal the waiting process when the operation starts but remember that the process will be forced to wait until the current operation at that index is finished.
+			
+	
+	\section{Double Buffering}
+		For this we use a monitor with a signal and continue policy, to handout permissions for two buffers. The monitor keeps track of whether reads and writes have occurred as to know when a process is allowed to read or write data, it will also handle swapping the buffers.
+	
+		\begin{algorithm}[H]
+			\begin{algorithmic}[1]
+				\State $readBuffer$
+				\State $writeBuffer$			
+			
+				\Procedure{monitor RW}{}
+					\State $read \gets true$
+					\State $written \gets false$
+					\State cond\ OKR,\ OKW
+				\EndProcedure
+				
+				\Procedure{StartR}{}
+					\If{$read==true$}
+						waitC(OKR)
+					\EndIf
+				\EndProcedure
+				
+				\Procedure{EndR}{}
+					\State $read \gets true$
+					\If{$written==true$}
+						\State swap()
+						\State signalC(OKW)
+					\EndIf
+				\EndProcedure
+				
+				\Procedure{StartW}{}
+					\If{$written==true$}
+						\State waitC(OKW)		
+					\EndIf
+				\EndProcedure
+				
+				\Procedure{EndW}{}
+					\State $written \gets true$
+					\If{$read==true$}
+						\State swap()
+						\State signalC(OKR)
+					\EndIf
+				\EndProcedure
+				
+				\Procedure{swap}{}
+					\State $readBuffer \gets writeBuffer$
+					\State $read \gets false$
+					\State $writeen \gets false$
+				\EndProcedure
+			\end{algorithmic}
+		\end{algorithm}
+		
+		Now we show this solution satisfy the given correctness property's. The two variables read and written keep track of whether a read or write operation has occurred since the last swap. This is so if the consumer attempts to read but the data has already been read then we are forced to wait for a swap to occur (we don't want to read the same data twice), same for writes. Only when a read and a write have both occurred do we then swap the buffers around. So the read buffer can be read from and the write buffer can be written to at the same time.
+		
+		
+\end{document}
+  			

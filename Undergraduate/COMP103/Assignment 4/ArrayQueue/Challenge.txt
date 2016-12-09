@@ -1,0 +1,11 @@
+In 112 i implemented my thread locking using a boolean and while loops, and this dident work as well as i had hoped, 
+had i used this here it definitly wouldent of been fair, because it would of just been which one checks to see if its
+still locked or not. One way i would of changed this would be to store the order threads requested access, in a queue,
+and given them access in that order.
+
+I implemented my thread locking the same way the ArrayBlockingQueue does, this was using a ReentrantLock. The cool thing
+about using this for thread locking is that it means that you can tell it wether to be fair or not by passing it a boolean
+in its constructor. If you tell it to be fair then it gives controll to the thread that has been waiting the longest.
+
+If you run the program with the fairness disabled and then with it enabled you can see a noticible diffrence in how close
+the values are.

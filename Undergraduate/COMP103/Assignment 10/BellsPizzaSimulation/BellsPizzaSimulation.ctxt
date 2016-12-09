@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BellsPizzaSimulation()
+comment0.text=\r\n\ Constructs\ a\ new\ BellsPizzaSimulation\ object\ and\r\n\ loads\ in\ destinations\ that\ the\ company\ delivers\ to\ (including\ delivery\ times).\r\n
+comment1.params=
+comment1.target=void\ loadDestinations()
+comment1.text=\r\n\ Loads\ in\ destinations\ and\ delivery\ times\ from\ file\ 'destinations.txt'.\r\n\ \r\n
+comment2.params=currentTime\ logFile
+comment2.target=Pizza\ readPizza(int,\ java.util.Scanner)
+comment2.text=\r\n\ Reads\ a\ single\ pizza\ request\ from\ the\ log\ file,\ and\ returns\ a\ corresponding\ Pizza\ object.\ \r\n\ \r\n\ @returns\ a\ pizza\ object,\ or\ 'null'\ if\ there\ was\ no\ pizza\ request\ for\ this\ time\r\n
+comment3.params=
+comment3.target=void\ runTests()
+comment3.text=\r\n\ Runs\ through\ each\ of\ the\ log\ files\ and\ compares\ the\ performance\ between\ the\ \r\n\ standard\ queue\ and\ the\ priority\ queue\ solutions.\ \r\n\ \r\n\ For\ the\ COMPLETION\ stage,\ you\ need\ to\ change\ the\ value\ of\ variable\ 'fname'\r\n\ from\ "log"+i\ to\ "completLog..."i.\r\n\ \r\n\ Each\ log\ file\ is\ used\ to\ simulate\ handling\ a\ sequence\ of\ pizza\ orders\ over\r\n\ time.\ For\ each\ log\ file,\ the\ simulation\ is\ first\ run\ with\ an\ ordinary\ queue\ \r\n\ (using\ a\ standard\ linked\ list\ from\ the\ Java\ collections\ library),\ and\ then\ your\ \r\n\ HeapArrayQueue.\ \r\n\ \r\n\ For\ the\ CHALLENGE\ stage,\ you\ should\ uncomment\ the\ code\ that\ also\ uses\ the\ HeapLinkedQueue\ as\ well.\r\n
+comment4.params=queue\ logFile
+comment4.target=double\ run(java.util.Queue,\ java.util.Scanner)
+comment4.text=\r\n\ Returns\ the\ profit\ (if\ positive,\ or\ loss\ if\ negatigve)\ of\ handling\r\n\ the\ pizza\ orders\ contained\ in\ the\ log\ file,\ using\ the\ queue\ provided\r\n\ by\ the\ runTests()\ method\ above.\r\n
+comment5.params=arguments
+comment5.target=void\ main(java.lang.String[])
+numComments=6

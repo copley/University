@@ -1,0 +1,56 @@
+Questions for Reflection.
+=========================
+
+1.  For the Scrabble game, we recommended using arrays for the rack and the
+board, but ArrayList for the bag.  Why? Compare the strengths and weaknesses of arrays vs ArrayLists.
+
+Answer 1: Arrays are probberly faster than ArrayLists, but to beable to use an Array you have to know
+how many elements you are going to be using. This is because expanding and shrinking an Array is very intencive task becasuse you
+have to create an array with the new size and copy all the data into the new Array. This means that if you want an array but you
+dont know how many elements you will have an ArrayList will be be better becasue it is built to handle dynamic size changing at run time.
+
+The other diffrence is that accessing an Array is much tidyer that accessing an ArrayList. for example to access an Array its just
+array[<index>] but for an ArrayList its arrayList.get(<index>), which isnt to bad but personally i think the Array syntax is nicer.
+
+2. There are many different ways that you could have done the checking for a
+valid play in the scrabble game (ie, checking that the working tiles were in a
+row or column with no gaps and connected to the previous tiles).  What would be a good way of going about the design of a tricky method like this?
+
+Answer 2: You would first want to check to see if the working tiles are all in one row or one column because if they arnt then you know strait
+away that the play isnt valid. After that you would find the min and the max column or row position, depending on if the working tiles are in a row or column 
+( e.g. if the working tiles are in a row then you want to get the min and max column positions after that you just itterate from the min to the max, making
+sure that all the cells have a tile in it and that one of these tiles is one that has been commited, unless ofcourse its the first commit. If you get to the itteration
+and these criteria have been met then you know the play is valid.
+
+One interesting thing about the valid play function was that it really did matter when you used it, i origonally had my valid play function built into
+my commit function so that the only way tiles could be commited would be if the valid play function returned true. But by doing it this way it caused my
+program to fail some of the tests. At first i thought there was a bug with the testing scripts but it was just a diffrence in the way we went about solving
+the scrabble game program.
+
+3. Last week you constructed a list of the key Java programming
+constructs that you used.  Add the important new constructs you used
+this week to that list, with a very brief note about each one.
+
+Answer 3: 
+
+Try And Catch: These are used to catch errors when executing a block of code so that your program dosnt crash
+you put the code block inside the try statment and then you will have catch statments for each of the diffrent errors you want to catch.
+Inside these catch statments will be code to be executed, this might be to alert the user to the error or what ever you want to do. Lastly you 
+can add a finally statment to the end of this. The finally statment will always be executed wether an execption is thrown or not.
+
+4. If you learned any more important concepts about programming or Computer
+Science, add them to your list from last week.
+
+Answer 4: 
+
+File IO: This week we learnt about file IO and the various ways to write/read to disk. for example you can use a file writer to do it and this will just write it
+to disk as you go, the problem with this is that you are constantly writing on the disk which is an expencive task so insted you could use a buffered writer
+which will write all the characters in the buffer to disk once the buffer has filled up. Lastly we learnt about writing objects to disk using an object writer, this would be
+useful in the scrabble if we had to save the state of the game because you could just write the ScrabbleSolitare class to file and restore it when you wanted to open it.
+
+If you are wanting to read from the disk you can use a file reader or buffered reader.
+
+Interfaces: We learnt about interfaces in the sense that if you implement an interface you are promising that you are going to implement the functions required by that
+interface. Interfaces are a form of inherantance and it allows you to tell the computer what methods you will have in your program. for example if you are making a mouse listerer class
+and you implemnt the mouse listener interface you have to have the onMouseEven method implemented, this is the only method the computer cares about, you can have what ever else you want
+in that class aslong as the method in the interface is included, this is so the computer can standardise what function is called when a mouse event occores.

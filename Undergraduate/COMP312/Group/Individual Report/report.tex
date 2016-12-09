@@ -1,0 +1,56 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+
+\title{COMP 312 Project Individual Report}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+	\section{Individual Report}
+		We chose to study the queue at the Bluebridge ferry terminal. There where 3 different departure times, morning, lunch, dinner which we all took turns to collect data from. Following this we used python scripts to take our data and convert it to a form we could work with.\\
+		
+		We then fitted our data to distributions which was a difficult part of the project as none of us had much idea about how to fit distributions or perform goodness of fit tests. Luckily we where able to find a python package called 'SciPy' to help us with this.\\
+		
+		Finally we created and ran simulations of our models to collect performance measures about them.\\
+		
+		Unfortunately we found that our simulations weren't as accurate as we hoped, this was because the arrival rate wasn't constant over the periods we where monitoring the service.\\
+		
+		A better approach to make the simulating more accurate would of been to have the arrival rate as a function of time.\\
+		
+		The project description suggested having one person work on each of the components. Rather than doing this we all worked on all of the parts of the project. We felt this was a better way to split up the work and it gave us all experience with each part of the project.\\
+		
+		I Helped write the code that fitted and graphed our data with the three different distributions and wrote the python simulation for the empirical model.\\
+		
+		When we where investigating the non constant arrival time I created a python script to graph a histogram of the minutes before departure of all the arrivals. This not only showed the non constant arrival rate but also that there was a peak of arrivals around the 40 - 50 minutes before departure. This happens to be the same amount of time that Bluebridge recommends you arrive before departure.\\
+		
+		If we where to start the project again I would say it would be good to think more about the system we where going to study and what other information could be interesting to collect. For example we just collected the arrivals and services but it would of also been interesting to record information like the average group size.\\
+		
+		Another interesting thing to do would of been to create a model that accounted for the non constant arrival rate. This would of allowed us to make more valuable and interesting recommendations to the business.\\
+		
+		Taking this project from start to finish and being able to apply things we where learning in the course helped reinforce what I was learning. Especially with the data analysis  and modeling part. Was very enjoyable to be able to use what we had collected to create a theoretical plan to help a business. One of the managers at Bluebridge was actually interested in the outcome of our study, knowing this made the project a lot more enjoyable.\\
+		
+		Our team used the chat app called "Slack" which helped us be more productive and it made it a lot easier to communicate with team members. We where able to use this application to easily message the team and share files. This contributed to our team being effective. Towards the end of the project was having weekly meetings where we would go to a computer lab and work together. If starting this project again I would like to maintain a consistent weekly meeting from the start as I found this always stimulated good discussion about the work we had to complete.
+\end{document}

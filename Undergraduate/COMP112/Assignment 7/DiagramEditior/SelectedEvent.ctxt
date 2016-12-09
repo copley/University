@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=source\ numSelected
+comment0.target=SelectedEvent(java.lang.Object,\ int)
+comment1.params=
+comment1.target=int\ getSelected()
+numComments=2

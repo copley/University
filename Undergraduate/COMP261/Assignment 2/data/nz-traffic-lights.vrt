@@ -1,0 +1,22 @@
+<OGRVRTDataSource>
+  <OGRVRTLayer name="nz-traffic-lights">
+    <SrcDataSource relativeToVRT="1">nz-traffic-lights.csv</SrcDataSource>
+    <GeometryType>wkbPoint</GeometryType>
+    <LayerSRS>EPSG:4326</LayerSRS>
+    <GeometryField encoding="WKT" field="WKT" reportSrcColumn="FALSE" />
+    <Field name="type" src="type" type="Integer" />
+    <Field name="label" src="label" type="String" width="80" />
+    <Field name="descr" src="descr" type="String" width="80" />
+    <Field name="city" src="city" type="String" width="80" />
+    <Field name="region" src="region" type="String" width="80" />
+    <Field name="country" src="country" type="String" width="80" />
+    <Field name="house" src="house" type="String" width="80" />
+    <Field name="phone" src="phone" type="String" width="80" />
+    <Field name="zip" src="zip" type="String" width="80" />
+    <Field name="highway" src="highway" type="String" width="80" />
+    <Field name="level" src="level" type="Integer" />
+    <Field name="endlevel" src="endlevel" type="Integer" />
+    <Field name="GEOMETRY_X" src="GEOMETRY_X" type="Real" />
+    <Field name="GEOMETRY_Y" src="GEOMETRY_Y" type="Real" />
+  </OGRVRTLayer>
+</OGRVRTDataSource>

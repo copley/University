@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Projection()
+comment1.params=g2d\ p\ c\ radius
+comment1.target=void\ drawCircle(java.awt.Graphics2D,\ Point3D,\ java.awt.Color,\ double)
+comment2.params=p
+comment2.target=Point4D\ Point3Dto4D(Point3D)
+numComments=3

@@ -1,0 +1,14 @@
+Accuracy On Training Data
+0.87
+
+Testing Data:
+Not Spam
+Spam
+Spam
+Not Spam
+Not Spam
+Spam
+Not Spam
+Not Spam
+Spam
+Not Spam

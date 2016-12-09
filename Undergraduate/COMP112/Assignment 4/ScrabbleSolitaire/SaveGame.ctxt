@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SaveGame()
+comment0.text=\r\n\ If\ nothing\ is\ passed\ to\ the\ constructor\ then\ it\ must\ be\ a\ new\ saveGame\r\n
+comment1.params=filePath
+comment1.target=SaveGame(java.lang.String)
+comment1.text=\r\n\ If\ a\ file\ path\ is\ passed\ to\ the\ constructor\ then\ a\ save\ game\ is\ being\ loaded\r\n
+comment2.params=key\ data
+comment2.target=void\ add(java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ Adds\ the\ passed\ data\ to\ the\ save\ game\ class\ under\ the\ key\ passed\ to\ it\r\n
+comment3.params=key
+comment3.target=java.lang.String\ get(java.lang.String)
+comment3.text=\r\n\ Retreves\ the\ data\ stored\ under\ the\ key\ passed\ to\ it.\ Assumes\ that\ the\ key\ is\ actually\r\n\ in\ the\ save\ game\r\n
+comment4.params=key
+comment4.target=boolean\ containsKey(java.lang.String)
+comment4.text=\r\n\ Returns\ true\ if\ the\ save\ file\ contains\ the\ passed\ key\r\n
+comment5.params=fileName
+comment5.target=void\ save(java.lang.String)
+comment5.text=\r\n\ Writes\ all\ the\ information\ stored\ in\ the\ save\ game\ class\ to\ a\ file\r\n
+numComments=6

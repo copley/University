@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=t\ x\ y
+comment0.target=PlaybackCell(CellType,\ int,\ int)
+comment1.params=s
+comment1.target=void\ setStage(int)
+comment1.text=\n\ Sets\ the\ stage\ at\ which\ this\ cell\ should\ display\ its\ tile\ (\ if\ it\ has\ one\ )\n
+comment2.params=t
+comment2.target=void\ setTile(Tile)
+comment2.text=\n\ Sets\ the\ tile\ for\ this\ cell\n
+comment3.params=s
+comment3.target=boolean\ draw(int)
+comment3.text=\n\ Draws\ the\ cell\ with\ the\ tile\ inside\ it\ if\ the\ cell\ contains\ a\ tile\n
+numComments=4

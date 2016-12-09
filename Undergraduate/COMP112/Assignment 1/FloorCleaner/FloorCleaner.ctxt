@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ cleanFloor()
+comment0.text=\r\n\ cleanFloor\ is\ the\ main\ simulation\ loop.\r\n
+comment1.params=
+comment1.target=void\ getNewAngle()
+comment1.text=\r\n\ Function\ chooses\ a\ new\ angle\ for\ the\ robot\ to\ take\r\n
+comment2.params=
+comment2.target=void\ cleanFloorWithStrat()
+comment2.text=\r\n\ Cleans\ the\ floor\ in\ a\ way\ that\ is\ more\ effecant\ than\ the\r\n\ random\ method.\ The\ idea\ of\ hugging\ the\ left\ and\ just\ moving\ in\r\n\ towards\ the\ center\ of\ the\ circle\ would\ work\ for\ any\ shape\ room,\r\n\ however\ if\ you\ wanted\ this\ program\ it\ would\ require\ some\ changing\r\n\ but\ the\ underlying\ concept\ would\ work.\ This\ function\ will\ work\ for\ any\ sized\ rectangualr\ room\r\n\ \r\n\ I\ also\ gave\ the\ robot\ extra\ sucking\ power\ (\ e.g.\ remove\ a\ square\ from\ around\ it\ )\ otherwise\ it\ wouldent\ reach\ the\ corners\r\n\ \r\n
+comment3.params=offsetX\ offsetY\ lapFinished
+comment3.target=boolean\ canGoFoward(int,\ int,\ boolean)
+comment3.text=\r\n\ Returns\ true\ if\ the\ robot\ is\ able\ to\ move\r\n\ foward\r\n
+comment4.params=
+comment4.target=void\ draw()
+comment4.text=\r\n\ Draws\ the\ roobot\ to\ the\ screen\ with\ a\ line\ showing\ its\ direction\r\n
+comment5.params=o
+comment5.target=java.lang.Integer\ isCollided(FloorCleaner.Obstical)
+comment5.text=\r\n\ Function\ performs\ the\ collision\ for\ the\ obsticals,\ if\ the\ robot\r\n\ collides\ with\ an\ obstical\ this\ will\ move\ the\ robot\ and\ return\ the\ new\ robotAngle\r\n\ for\ the\ robot\ to\ travle\ in\r\n\ \r\n\ For\ this\ i\ dident\ need\ to\ know\ what\ side\ the\ collision\ occored\ on\ so\ i\ could\ just\ \r\n\ see\ if\ the\ bounding\ boxes\ overlapped\r\n\ \r\n\ Origonnaly\ i\ was\ trying\ to\ test\ for\ a\ collision\ on\ each\ side\ but\ this\ was\ to\ complicated\r\n\ so\ i\ did\ some\ research\ and\ found\ a\ much\ simpler\ way\ of\ doing\ what\ i\ wanted\ to\ do\ \r\n\ Resource\:\ https\://www.cs.sjsu.edu/~teoh/teaching/previous/cs134_sp07/lectures/Lecture10_CollisionDetection.ppt\ (\ Slide\ 4\ )\r\n\ \r\n\ NOTE\:\ Had\ to\ slow\ program\ down\ because\ if\ it\ went\ to\ fast\ the\ ball\ would\ sometimes\ get\ stuck,\ will\ try\ to\ fix\ this\ if\r\n\ i\ have\ time\r\n
+comment6.params=arguments
+comment6.target=void\ main(java.lang.String[])
+comment6.text=Create\ a\ new\ FloorCleaner\ object\ and\ call\ cleanFloor.
+numComments=7

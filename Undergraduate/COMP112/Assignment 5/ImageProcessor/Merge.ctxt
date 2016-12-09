@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=image1\ image2\ sliderVal
+comment0.target=float[][][]\ Merge(float[][][],\ float[][][],\ double)
+comment0.text=\r\n\ Takes\ two\ images\ and\ merges\ them,\ if\ there\ is\ an\ origonal\ image,\ image1\ should\ be\ it\r\n\ \r\n\ @returns\ result\ of\ merging\ the\ two\ images\ in\ a\ float[][][]\r\n
+numComments=1

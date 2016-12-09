@@ -1,0 +1,48 @@
+Questions for Reflection.
+=========================
+
+1.  What is the advantage of making a DodgemCar class?  Why is it better
+than putting all the code in a single DodgemGame class, like we did
+with the floorCleaner in Assignment 1?
+
+Answer 1: Seperating the code out into seperate files makes the code simpler and easier to read,
+it also is much better practice when working on a program, You arnt ever going to have all you code
+in one file beacuse comming back to it later and trying to fix it would be impossile. And finally 
+if you have a modular porgram its easier to work on because you dnt have to navagate tons of code.
+
+
+2. The assignment split the development of both programs into three
+stages (Core, Completion, and Challenge).  This was partly for
+marking, but it was also intended to make it easier to do the
+program.  Why does it it help to have several stages? What Software Engineering
+methodology does this reflect?
+
+Answer 2: It helps because then you have a list of milestones that you know you have
+to achive, if you are just trying to write a program without any logical steps to folow then
+its easy to get overwelmed. It also helps because this way you are able to get the really important
+things that are required for the program to functon done first and then add the extra
+fetures on later. This reflects the waterfall software engineering methodlgy where
+a program is devided up into sequential steps.
+
+
+3. Last week you constructed a list of the key Java programming
+constructs that you used.  Add the important new constructs you used
+this week to that list, with a very brief note about each one.
+
+Answer 3: 
+
+Foreach: The foreach loop is the same principle as the for loop just simpler,
+in somecases this could be simpler but the regular forloop will always be more
+powerful.
+
+
+4. If you learned any more important concepts about programming or Computer
+Science, add them to your list from last week.
+
+Answer 4: This week we learnt about recursion, its an important concept for problems
+that can be devided up into smaller problems
+
+
+
+
+

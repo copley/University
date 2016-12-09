@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{listings}
+\lstdefinelanguage{Python}{
+ keywords={typeof, null, catch, switch, in, int, str, float, self},
+ keywordstyle=\color{ForestGreen}\bfseries,
+ ndkeywords={boolean, throw, import},
+ ndkeywords={return, class, if ,elif, endif, while, do, else, True, False , catch, def},
+ ndkeywordstyle=\color{BrickRed}\bfseries,
+ identifierstyle=\color{black},
+ sensitive=false,
+ comment=[l]{\#},
+ morecomment=[s]{/*}{*/},
+ commentstyle=\color{purple}\ttfamily,
+ stringstyle=\color{red}\ttfamily,
+}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\title{COMP 312 Assignment 1}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+  	\section{Python}
+  		\subsection{Program 1.a}
+  			\lstinputlisting[language=Python]{Programs/01.py}
+  			
+  		\subsection{Program 1.b}
+  			\lstinputlisting[language=Python]{Programs/02.py}
+  			
+  		\subsection{Program 1.c}
+  			\lstinputlisting[language=Python]{Programs/03.py}
+  			
+  		\subsection{Program 1.d}
+  			\lstinputlisting[language=Python]{Programs/04.py}
+  			
+  		\subsection{Program 1.e}
+  			\lstinputlisting[language=Python]{Programs/05.py}
+  			
+  		\subsection{Program 2.a / 2.b}
+  			\lstinputlisting[language=Python]{Programs/radius.py}
+  			
+  			\subsubsection{Discussion}
+  				We get the value of $meanR$ to be $0.500088544935$ which makes sense. We are generating random numbers over the range [0.0, 1.0). Assuming these numbers are uniformly distributed we would expect these numbers to average up to $\frac{0.0 + 1.0}{2} = 0.5$.
+  				
+  				From an initial inspection of the data we would expect to see that $meanA = \pi(meanR)^2$. However they don't and this dependency is caused by the fact that for some list of numbers $L = (l_1, ...., l_n)$
+  				
+  				\begin{align*}
+  					\sum_{k=1}^{n} l_1^2 \neq (\sum_{k=1}^{n} l_1)^2
+  				\end{align*}
+  				
+  				so if we square each r and sum them up we get $0.333439307864$. Then multiplying this by PI gives us $\pi * 0.333439307864 = 1.04753048 = meanA$
+\end{document}

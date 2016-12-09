@@ -1,0 +1,49 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{float}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+
+\title{COMP 304 Assignment 4}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+	\section{Example Query's}  	
+		\begin{enumerate}
+			\item \textbf{answer([i, feel, bad], R).} will unify R to be [what, makes, you, feel, bad, qm].
+			
+			\item The previous query also works in reverse \textbf{answer(Q, [what, makes, you, feel, bad, qm]} will unify Q to be [i, feel, bad].		
+		\end{enumerate}		  	
+  	
+		Similarly works the same for all other types of query's that the program can receive  	
+  	
+  	\section{Working Backwards}
+		In my solution given a reply string it is able to find a question string. A few tweaks had to be made for this to work.\\
+		
+		Firstly the match predicate is used to take a question string to a reply string. Originally it just matched the first words of the query string. The problem here was that when working backwards pro-log dident know which definition of match to use, it would pick the first option. Here it would get stuck as part of creating the reply involves appending two lists together and, it would be unable to find the correct original list because the words dont line up. To solve this the match predicate will match on the first words of question and reply.\\ 
+  	
+  	There is still an issue with working backwards, it will successfully find a solution but then if you ask for another it will enter an infinite loop and eventually run out of memory. It seems to create an infinitely big list while trying to reverse the append predicate, im not sure why this happens
+\end{document}

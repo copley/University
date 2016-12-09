@@ -1,0 +1,27 @@
+/* Reflection.txt for COMP103
+ * Name:
+ * Usercode:
+ * ID:
+ */
+
+For your reflection:
+====================
+
+Firstly, describe how far you got, on this assignment. If there was a problem
+you got stuck on, what was that problem?
+
+I was able to finish the assignement, i also added an enhancement to the HeapLinkedQueue to make it log(n) add and remove, each node stores the height
+of the right and left child from which it can figure out which way to go when adding and removing from the tree, this saves the program from having to search
+all the possible places for where to add.
+
+
+This was the last assignment for COMP103. Think back to the beginning of the course and what you knew at that point, and then list some of the insights and knowledge you gained during this course.
+
+Which insights and new knowledge do you regard as valuable and why? 
+--------------------------------------------------------------------
+
+Learning about the Heaps was very cool because i really like tree structures and i hadent used anything like a Heap before. And i also really enjoied the Hashing, that had been something i had wanted to learn
+about for awhile as it is the back bone for some very quick assignments.
+
+I gained alot of insights into how data strucutres workd, i had used most of them before but apart from the BST i hadent implemented them before so that was very interesting to see how everything worked, i think this is quite
+valuable as it means you can for one thing understand what is going on and for a second thing it means you can create your own data structures because you understand how others work.

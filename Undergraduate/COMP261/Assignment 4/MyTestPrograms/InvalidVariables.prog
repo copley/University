@@ -1,0 +1,9 @@
+$test = 1;
+
+if (eq($test, 1)) {
+move;
+
+ if (eq($tessst, 1)) {
+  move;
+ }
+}

@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=size
+comment0.target=MazeGenerator(int)
+comment1.params=nodes
+comment1.target=void\ generate(java.util.Map)
+comment2.params=
+comment2.target=Cell\ getEntrance()
+comment3.params=
+comment3.target=Cell\ getExit()
+comment4.params=maze\ cell\ neighbours
+comment4.target=void\ carvePassagesFrom(Cell[][],\ Cell,\ java.util.Map)
+comment5.params=cell\ neighbour\ neighbours
+comment5.target=void\ carve(Cell,\ Cell,\ java.util.Map)
+comment6.params=
+comment6.target=java.lang.Iterable\ getDirectionsShuffled()
+comment7.params=cell\ direction
+comment7.target=Cell\ getNeighbour(Cell,\ MazeGenerator.Direction)
+comment8.params=maze\ x\ y
+comment8.target=Cell\ checkValid(Cell[][],\ int,\ int)
+numComments=9

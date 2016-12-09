@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Tracer()
+comment0.text=\ \r\n\ \ Construct\ a\ new\ Tracer\ object\ and\ set\ up\ the\ GUI\r\n
+comment1.params=url
+comment1.target=java.awt.image.BufferedImage\ loadImage(java.lang.String)
+comment2.params=button
+comment2.target=void\ buttonPerformed(java.lang.String)
+comment2.text=Respond\ to\ button\ presses
+comment3.params=action\ x\ y
+comment3.target=void\ mousePerformed(java.lang.String,\ double,\ double)
+comment3.text=\ \r\n\ Respond\ to\ mouse\ events,\ particularly\ to\ "released"\ \r\n
+comment4.params=
+comment4.target=void\ drawPolyline()
+comment4.text=\r\n\ Redraws\ the\ background\ and\ then\ the\ polyline\r\n
+comment5.params=imageURL
+comment5.target=void\ setNewImage(java.lang.String)
+comment5.text=\r\n\ Takes\ a\ file\ URL\ as\ input\ and\ sets\ it\ to\ the\ current\ image\r\n\ NOTE\:\ This\ function\ does\ NOT\ change\ the\ image\ currently\ displayed\r\n
+comment6.params=
+comment6.target=void\ startLine()
+comment6.text=\r\n\ Clear\ the\ screen,\ redisplay\ the\ image,\ and\ get\ ready\ to\ start\ a\ new\ line.\r\n\ Sets\ the\ values\ of\ the\ fields\ storing\ the\ current\ point\ to\ -1\r\n
+comment7.params=arguments
+comment7.target=void\ main(java.lang.String[])
+comment7.text=\#\ END\ OF\ YOUR\ CODE
+numComments=8

@@ -1,0 +1,25 @@
+/* Reflection.txt for COMP103
+ * Name: Daniel Thomas Braithwaite
+ * Usercode: braithdani
+ * ID: 300313770
+ */
+
+For your reflection:
+====================
+
+Write a paragraph that describes an aspect of the material we've covered 
+so far (ie. anything in the first 4 lectures, or this assignment) that 
+you found particularly interesting or tricky to understand. Include how 
+you went about exploring further, learning about the issue to your own 
+satisfaction. If understanding it remains a problem for you, outline 
+what your next step will be in sorting this out.
+--------------------------------------------------------------------
+
+PLEASE NOTE: I used Swing inseted of the ecs100 library for the 2048 game AND i havent submited the Board16 class becasue the lecturer
+		said that if you have compleated the 2048 game you dident have to
+
+In my tutorial this week i learnt that generics dosnt use inheratence how i thought it would be.
+If you had Arraylist<Object> arraylist = new ArrayList<String>();, that wouldent be a valid statment.
+Where as if you where using just a simple array Object[] array = new String[x]; it would be valid. I would of thought
+they would work the same way. This is because yea a Stirng is a subtype of Object but a list of String does not have the
+same methods as a list of Object, even though they are named the same.

@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Log()
+comment0.text=\r\n\ Creates\ a\ new\ Log\ class\ and\ links\ it\ to\ a\ new\ log\ file\r\n
+comment1.params=fp
+comment1.target=Log(java.lang.String)
+comment1.text=\r\n\ Created\ a\ new\ Log\ class\ and\ links\ it\ to\ an\ exsisting\ log\ file\r\n
+comment2.params=
+comment2.target=java.lang.String\ getFilePath()
+comment2.text=\r\n\ Returns\ the\ path\ to\ the\ log\ file,\ useful\ if\ you\ initilised\ the\ class\r\n\ and\ it\ decided\ on\ the\ logfile\ name\r\n
+comment3.params=
+comment3.target=void\ open()
+comment3.text=\r\n\ Opens\ a\ stream\ to\ the\ log\ file\r\n
+comment4.params=
+comment4.target=void\ close()
+comment4.text=\r\n\ Closes\ the\ connection\ to\ the\ file\r\n
+comment5.params=score\ roundScore
+comment5.target=void\ newCommit(int,\ int)
+comment5.text=\r\n\ Writes\ the\ header\ for\ a\ new\ commit\ to\ the\ file\r\n
+comment6.params=x\ y\ l
+comment6.target=void\ add(int,\ int,\ java.lang.String)
+comment6.text=\r\n\ Adds\ information\ about\ a\ commited\ tile\ to\ the\ log\r\n
+comment7.params=fp
+comment7.target=java.lang.String\ readLog(java.lang.String)
+comment7.text=\r\n\ Reads\ the\ log\ at\ file\ path\ fp\ and\ returns\ it\ as\ a\ string\r\n
+numComments=8

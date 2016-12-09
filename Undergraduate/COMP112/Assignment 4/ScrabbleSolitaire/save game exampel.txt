@@ -1,0 +1,20 @@
+Scrabble Solitaire Save Game
+
+score=<score>
+roundScore=<roundScore>
+
+Board:
+firstTime=
+
+workingTiles
+{
+[x,y]
+
+.
+.
+.
+}
+
+board
+{
+[

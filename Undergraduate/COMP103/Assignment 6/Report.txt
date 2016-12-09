@@ -1,0 +1,134 @@
+Method:
+
+I created a testing program that runs sorting algorythms over the three types of arrays, Random, Sorted or Reverse Sorted, and 5 diffrent
+array sizes (the size can be changed by variables). It will run these sorting algorythms N times and average the results. It dosnt run Selection 
+and Insersion sort as the data size gets to big
+
+
+Plain Algorythms
+
+Random Lists
+                | Selection Sort  | Insersion Sort  | Merge Sort      | Quick Sort      | Quick Sort2     | Arrays Sort     |
+-----------------------------------------------------------------------------------------------------------------------------
+100             | 0.001           | 0.000           | 0.000           | 0.000           | 0.000           | 0.000           |
+-----------------------------------------------------------------------------------------------------------------------------
+1000            | 0.004           | 0.003           | 0.000           | 0.001           | 0.001           | 0.001           |
+-----------------------------------------------------------------------------------------------------------------------------
+10000           | 0.388           | 0.248           | 0.003           | 0.003           | 0.002           | 0.004           |
+-----------------------------------------------------------------------------------------------------------------------------
+100000          | 45.503          | 35.463          | 0.035           | 0.041           | 0.037           | 0.042           |
+-----------------------------------------------------------------------------------------------------------------------------
+1000000         | 60.000+         | 60.000+         | 0.620           | 0.786           | 0.752           | 0.689           |
+-----------------------------------------------------------------------------------------------------------------------------
+NOTE: Times averaged over 5 itterations
+
+Sorted Lists
+                | Selection Sort  | Insersion Sort  | Merge Sort      | Quick Sort      | Quick Sort2     | Arrays Sort     |
+-----------------------------------------------------------------------------------------------------------------------------
+100             | 0.000           | 0.000           | 0.000           | 0.000           | 0.000           | 0.000           |
+-----------------------------------------------------------------------------------------------------------------------------
+1000            | 0.003           | 0.000           | 0.000           | 0.000           | 0.000           | 0.000           |
+-----------------------------------------------------------------------------------------------------------------------------
+10000           | 0.420           | 0.000           | 0.001           | 0.001           | 0.001           | 0.000           |
+-----------------------------------------------------------------------------------------------------------------------------
+100000          | 60.000+         | 0.004           | 0.025           | 0.025           | 0.022           | 0.003           |
+-----------------------------------------------------------------------------------------------------------------------------
+1000000         | 60.000+         | 0.067           | 0.534           | 0.601           | 0.556           | 0.088           |
+-----------------------------------------------------------------------------------------------------------------------------
+NOTE: Times averaged over 5 itterations
+
+Reverse Sorted Lists
+                | Selection Sort  | Insersion Sort  | Merge Sort      | Quick Sort      | Quick Sort2     | Arrays Sort     |
+-----------------------------------------------------------------------------------------------------------------------------
+100             | 0.000           | 0.000           | 0.000           | 0.000           | 0.000           | 0.000           |
+-----------------------------------------------------------------------------------------------------------------------------
+1000            | 0.005           | 0.004           | 0.000           | 0.000           | 0.000           | 0.000           |
+-----------------------------------------------------------------------------------------------------------------------------
+10000           | 0.614           | 0.521           | 0.001           | 0.001           | 0.002           | 0.000           |
+-----------------------------------------------------------------------------------------------------------------------------
+100000          | 60.000+         | 60.000+         | 0.024           | 0.026           | 0.028           | 0.006           |
+-----------------------------------------------------------------------------------------------------------------------------
+1000000         | 60.000+         | 60.000+         | 0.496           | 0.515           | 0.686           | 0.201           |
+-----------------------------------------------------------------------------------------------------------------------------
+NOTE: Times averaged over 5 itterations
+
+Moderfied Algorythms
+
+Random Lists
+                | Selection Sort  | Insersion Sort  | Merge Sort      | Quick Sort      |
+-----------------------------------------------------------------------------------------
+100             | 0.003           | 0.000           | 0.000           | 0.001           |
+-----------------------------------------------------------------------------------------
+1000            | 0.031           | 0.014           | 0.002           | 0.002           |
+-----------------------------------------------------------------------------------------
+10000           | 1.084           | 0.066           | 0.006           | 0.007           |
+-----------------------------------------------------------------------------------------
+100000          | 60.000+         | 3.037           | 0.067           | 0.049           |
+-----------------------------------------------------------------------------------------
+1000000         | 60.000+         | 60.000+         | 0.857           | 0.665           |
+-----------------------------------------------------------------------------------------
+NOTE: Times averaged over 5 itterations
+
+Sorted Lists
+                | Selection Sort  | Insersion Sort  | Merge Sort      | Quick Sort      |
+-----------------------------------------------------------------------------------------
+100             | 0.000           | 0.000           | 0.000           | 0.000           |
+-----------------------------------------------------------------------------------------
+1000            | 0.004           | 0.000           | 0.001           | 0.000           |
+-----------------------------------------------------------------------------------------
+10000           | 0.633           | 0.001           | 0.002           | 0.001           |
+-----------------------------------------------------------------------------------------
+100000          | 60.000+         | 0.024           | 0.044           | 0.021           |
+-----------------------------------------------------------------------------------------
+1000000         | 60.000+         | 0.438           | 0.649           | 0.418           |
+-----------------------------------------------------------------------------------------
+NOTE: Times averaged over 5 itterations
+
+Reverse Sorted Lists
+                | Selection Sort  | Insersion Sort  | Merge Sort      | Quick Sort      |
+-----------------------------------------------------------------------------------------
+100             | 0.000           | 0.000           | 0.000           | 0.001           |
+-----------------------------------------------------------------------------------------
+1000            | 0.004           | 0.001           | 0.000           | 0.000           |
+-----------------------------------------------------------------------------------------
+10000           | 0.598           | 0.032           | 0.003           | 0.003           |
+-----------------------------------------------------------------------------------------
+100000          | 60.000+         | 3.048           | 0.065           | 0.043           |
+-----------------------------------------------------------------------------------------
+1000000         | 60.000+         | 60.000+         | 1.032           | 0.719           |
+-----------------------------------------------------------------------------------------
+NOTE: Times averaged over 5 itterations
+
+Dicussion:
+
+I created a testing program that runs sorting algorythms over the three types of arrays, Random, Sorted or Reverse Sorted, and 5 diffrent
+array sizes (the size can be changed by variables). It will run these sorting algorythms N times and average the results.
+
+After averaging all my times over 5 runs, i got the abouve results. We can see that on the random lists merge sort is the fastest, and it is
+also the faster than Quick Sort  on sorted and reverse sorted lists. This wasnt the result i was expecting, i thought Quick Sort to be the best but maby this is just a
+result of not enough samples and nicely generated random lists.
+
+On Sorted lists Insersion Sort was the fastest, which makes sense as best case for Insersion Sort is O(n) meaning if the data is allready sorted then you only
+have to loop through the array once.
+
+The Arrays Sort method is quite over all the tests, this is probberly because it will use a hibrid of multiple sorting algorythms that will make it very effecant
+over a range of diffrent cases. It is however the fastest when it comes to using it on a list that is allready sorted, and it is the fastest at sorting large reverse sorted arrays.
+This is a result of it being built up of diffrent sorting algorythms, meaning its very effecant. I think java uses TimSort which is very good at sorting when there are exsisting
+orderings in the data, hence the speed.
+
+With the moderfied Quick Sort i found that it was as quick or quicker than the regualr Quick Sort untill we got to larget data sets, in which it has a very steep increase in the time
+it takes, i wasnt quite sure why this is. My only thought was that maby its slower to break your sort into small Insersion Sorts when you small partions than just run it as a normal quick 
+sort when the data is large, 
+
+The moderfied Merge Sort peformed pretty much the same as the un moderfied merge sort, apart from when sorting the reverse sorted lists. I was supprised when i saw this becasue the changes
+that where made wouldent change how fast it can sort
+
+None of the moderfacations really made a massive diffrence over all, they all increased peformance in some places but lost peformance in others, so it really depends on what you
+are going to be sorting.
+
+
+Tim Sort:
+
+I wasnt able to compleat the tim sort but from what i unserstand from my research, it works by useing orderings that may allready exist in the data. And if these orderings dont exist then 
+it dosnt make the algorythm less effecant. What it does is it breaks the data down into runs which consist of bits of data that are allready ordered, if it cant find runs that are long enough
+it will extend it and sort it with Insersion sort. After which it uses the merge part of merge sort to combine these runs into a final sorted array.

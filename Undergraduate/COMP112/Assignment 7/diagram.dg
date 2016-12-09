@@ -1,0 +1,4 @@
+RECTANGLE:[X[682], Y[131], H[162], W[166], O[1]; COLOR[-16724839]; ID[1]; STR[World]];;
+OVAL:[X[67], Y[76], H[273], W[327], O[0]; COLOR[-10092442]; ID[2]; STR[Hello]];;
+;-;
+LINK[2:1]

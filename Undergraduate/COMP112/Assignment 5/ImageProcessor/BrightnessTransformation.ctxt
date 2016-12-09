@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=origonal\ ammount
+comment0.target=float[][][]\ BrightnessTransformation(float[][][],\ double)
+comment0.text=\r\n\ Takes\ an\ image\ as\ input\ and\ adjusts\ the\ brightness\ based\ on\ the\ value\ passed\ as\ ammount,\ which\ should\ be\ between\ -100\ and\ 100\ (inclusive)\r\n
+comment1.params=rgb
+comment1.target=float[]\ RGBtoHSL(float[])
+comment1.text=\r\n\ Converts\ RGB\ to\ HSL\ and\ returns\ it\r\n
+comment2.params=hsl
+comment2.target=float[]\ HSLtoRGB(float[])
+comment2.text=\r\n\ Converts\ HSL\ to\ RGB\ and\ returns\ it\r\n
+numComments=3

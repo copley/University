@@ -1,0 +1,36 @@
+COMP112 Assignment 6:  Reflection.
+
+
+Briefly list the features that you implemented in your Chat Client.
+
+Chat Window: A new window will open for each channel or private chat, from within these windows you can
+send commands by adding a '/' to the front of what you are sending. If the window is for a channel then there is
+a list of the users that are connected on the side of the window, with three buttons below, 'privmsg', 'whois', 'kick',
+you can select a user from the list and click one of the buttons to execute it on them. If you get kicked from a channel then 
+a popup will appear and display the message. If you close and re join a channel all the previous messages will be there but there
+will be a cupple of lines displaying where you left and where you joined again. There is also auto compleat for names, pressing the tab key will
+auto compleat what you are typing with a name, if there is a name that can be mached to it
+
+Server Window: The main window is for comuinication with the server ( though you can send prviate messages from there ), you can send commands
+from here without the '/' also most replies from the server come here. Also this is where notices will show up. This also has list that contains all the diffrent
+channels on the current server, you can select one and easily join one by clicking the join button, this list updates every 15 seconds.
+
+Error Handling: The program will catch errors, when you try connect with an exsising username, when you try connect with a username with 
+bad charactors in it, if you try run a command you arnt allowed to run it will tell you, and so on.
+
+Toolbar: The toolbar gives you access to many diffrent seever commands like changing your nickname, changing your name, the help command, the info command
+and so on.
+-------
+
+Describe how you tested your program, and discuss how much confidence you have
+that your testing shows that the program works correctly. 
+
+I tested my program by thinking of cases where i thought there might be a problem, quite alot of these cases scuseeded in making my program crash. And
+i would run these tests again when i added something reasonabley big into my program. I am quite confident that this testing found most of the bugs
+but i am sure that there will still be some that i have missed.
+
+Some things that i tested where, entering invalud usernames ( ie bad charactors and exsisting ones ) and i checked to make sure that the error messages got 
+displayed correctly.
+
+I also made sure that entering an invlaid IRC Server wouldent crash and cause the program to throw an error. i did this by entering random charactors into the input
+boxes and i did that a cupple of tiems, i also tried entering something that looked like a valid server but was wasnt.

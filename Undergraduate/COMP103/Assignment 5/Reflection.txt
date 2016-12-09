@@ -1,0 +1,45 @@
+/* Reflection.txt for COMP103
+ * Name:
+ * Usercode:
+ * ID:
+ */
+
+For your reflection:
+====================
+
+Firstly, describe how far you got, on this assignment. If there was a problem
+you got stuck on, what was that problem?
+
+
+Some of the recursive algorithms in this assignment could have been written
+just as easily using simple loops.
+
+Which recursive methods could have been easily written with loops?
+
+What are the advantage(s) or disadvantage(s) of using recursive methods 
+rather than loops.
+
+Why couldn't the others be easily written with loops?
+
+Many people find recursion hard to understand at first, although it doesn't do
+anything different from previous programs - it just involves methods which call
+methods.  Why is it tricky?
+
+--------------------------------------------------------------------
+
+I was able to compleat the whole assignment, how ever i did have some trouble implementing the interpolation
+search, sometimes the mid value would be to big and i wasnt to sure how to solve this at first.
+
+The loop could of been done on the drawing the stepping stones, and the tree could of been done with a loop to
+
+The advantage to using recursive methods would be that its easier to debug because you can look through the stack and
+see what the state of the previous call is, if you wanted to do this in a loop you would have to store everything in extra
+variables. Also i personally think that its easier to think about the problems in terms on recursion, it makes more sense.
+
+because they relied on being able to backtrack, for example in the maze search if it reached a dead end it could
+go backwards down the stack untill there was another option, the algorythm couldent easily be converted to a loop, im sure
+its possible to do it with a loop but you woud have to implement it diffrently
+
+I learnt recursion awhile ago so i cant really remeber if/what problems i had with it but i suppose it is because its a
+compleatly diffrent way of thinking about a problem, becuase in recursion you are dealing with a problem in which 
+gets smaller with each itteration, where as with an algorythm people are use to are a chain of functions that will solve a problem

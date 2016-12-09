@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ImageProcessor()
+comment1.params=b
+comment1.target=void\ buttonPerformed(java.lang.String)
+comment2.params=t\ x\ y
+comment2.target=void\ mousePerformed(java.lang.String,\ double,\ double)
+comment3.params=s\ val
+comment3.target=void\ sliderPerformed(java.lang.String,\ double)
+comment4.params=t\ r
+comment4.target=void\ textFieldPerformed(java.lang.String,\ java.lang.String)
+comment5.params=filepath
+comment5.target=float[][][]\ loadImage(java.lang.String)
+comment6.params=
+comment6.target=void\ draw()
+comment7.params=fp
+comment7.target=float[][]\ ParseFilterFile(java.lang.String)
+comment8.params=args
+comment8.target=void\ main(java.lang.String[])
+numComments=9

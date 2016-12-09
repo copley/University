@@ -1,0 +1,18 @@
+-- ECHOSERVER, ECHOCLIENT --
+
+Running the EchoServer and EchoClient works just as before except the knock knock joke has been updated to
+
+Knock, Knock
+Whos there?
+Merry
+Merry Who?
+Merry Christmas
+
+-----------------------------
+
+-- Search --
+
+Running java Search <start key> <key size> <cypher text> <n>
+
+Will search n keys starting from start key
+

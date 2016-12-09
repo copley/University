@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=t
+comment0.target=Square(java.lang.String)
+comment1.params=
+comment1.target=boolean\ hasBox()
+comment1.text=Whether\ there\ is\ a\ box\ on\ this\ square
+comment2.params=
+comment2.target=boolean\ free()
+comment2.text=Whether\ the\ square\ is\ free\ to\ move\ onto
+comment3.params=
+comment3.target=Square\ moveOff()
+comment3.text=The\ square\ you\ get\ if\ you\ push\ a\ box\ off\ this\ square
+comment4.params=
+comment4.target=Square\ moveOn()
+comment4.text=The\ square\ you\ get\ if\ you\ push\ a\ box\ on\ to\ this\ square
+numComments=5

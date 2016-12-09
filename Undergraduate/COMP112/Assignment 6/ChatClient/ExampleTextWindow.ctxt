@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=arguments
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=javax.swing.JTextArea\ createNewFrame()
+comment1.text=\r\n\ Create\ and\ return\ a\ JTextArea\ in\ a\ new\ JFrame.\r\n\ The\ text\ area\ will\ have\ scroll\ bars\ around\ it.\r\n\ Other\ methods\ can\ then\ write\ to\ the\ JTextArea\ using\ the\ append(...)\ method\r\n
+comment2.params=textOutput
+comment2.target=void\ interact(javax.swing.JTextArea)
+comment2.text=Copy\ every\ line\ the\ user\ types\ to\ the\ text\ pane
+numComments=3

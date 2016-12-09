@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ processDates()
+comment0.text=\r\n\ Loop\ to\ repeatedly\ process\ a\ date.\r\n\ Asks\ the\ user\ if\ they\ want\ to\ enter\ another\ date\ each\ time.\r\n
+comment1.params=
+comment1.target=void\ processADate()
+comment1.text=\r\n\ Asks\ user\ for\ a\ date,\ then\ produces\ the\ required\ output.\r\n\ \r\n\ As\ this\ program\ needs\ to\ account\ for\ the\ julian\ callender,\ after\ looking\ up\ when\r\n\ diffrent\ countries\ made\ the\ switch\ sinse\ in\ the\ brif\ it\ said\ to\ do\ it\ from\ 1582\ i\ looked\r\n\ at\ the\ french\ callender\ which\ showed\ me\ the\ exzact\ dates\ that\ where\ missing\ and\ when\ the\r\n\ callenders\ where\ switeched\ out.\r\n\ \r\n\ Resource\:\ http\://www.timeanddate.com/calendar/julian-gregorian-switch.html\r\n
+comment2.params=date
+comment2.target=boolean\ isValidDate(int[])
+comment2.text=\r\n\ Checks\ to\ see\ if\ the\ date\ is\ valid\r\n
+comment3.params=year
+comment3.target=boolean\ isLeapYear(int)
+comment3.text=\r\n\ Wasnt\ sure\ how\ to\ do\ this\ so\ i\ used\ this\ as\ a\ resource\r\n\ http\://www.icsejava.com/programs/leap-year\r\n
+comment4.params=date
+comment4.target=int\ dayOfWeek(int[])
+comment4.text=\r\n\ My\ resource\ for\ this\ information\ was...\r\n\ http\://en.wikipedia.org/wiki/Determination_of_the_day_of_the_week\#Basic_method_for_mental_calculation\r\n
+comment5.params=date
+comment5.target=void\ drawWeek(int[])
+comment5.text=\r\n\ Draws\ the\ current\ week\ highlighting\ the\ current\ day\ in\ green\r\n\ \r\n
+comment6.params=date
+comment6.target=void\ drawMonth(int[])
+comment6.text=\r\n\ Draws\ the\ monthly\ callender,\ with\ days\ leading\ up\ to\ the\ month\ on\ the\ top\ row\r\n\ and\ days\ after\ the\ month\ on\ the\ bottom\ row(s)\r\n
+comment7.params=arguments
+comment7.target=void\ main(java.lang.String[])
+comment7.text=Create\ a\ new\ DateChecker\ object\ and\ call\ processDates
+numComments=8

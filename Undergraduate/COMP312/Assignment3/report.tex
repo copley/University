@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{url}
+\usepackage{listings}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}[thm]
+\newtheorem{lemma}{Lemma}[thm]
+
+\title{COMP 312 Assignment 3}
+\author{Daniel Braithwaite}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+  	\pagenumbering{arabic}
+  	
+  	\section{Python}
+  		\subsection{Ellipse Problem}
+  			\lstinputlisting[language=Python]{Programs/01.py}
+  			
+  			This program outputs
+  			
+  			\begin{align}
+  				Area:\ 157.079632679\\
+				Eccentricity:\ 1.0
+  			\end{align}
+
+		\subsection{Chi Square Problem}
+			\subsubsection{Part B Solution}
+				\lstinputlisting[language=Python]{Programs/02.py}			
+
+
+				The output for this section is the following table\\
+				\begin{center}
+					\begin{tabular}{ c c c }
+						$k$ & $E(X)$ & $var(X)$\\
+						\hline
+						1 & 1.0310970666411978 & 2.1809895852678212\\
+						2 & 2.0196390351470401 & 4.0906849280367874\\
+						3 & 3.0104658433374825 & 6.0929914117158352\\
+						4 & 3.9938676109902742 & 8.0085366007510803\\
+						5 & 4.9926872174841925 & 10.172262735835909\\
+						6 & 5.9559869106853442 & 11.465470122520625\\
+						7 & 6.9672714050261986 & 13.834253416945165\\
+						8 & 8.0347194125058135 & 16.044484561872114\\
+					\end{tabular}
+				\end{center}
+							
+			\subsubsection{Part C Solution}
+				\lstinputlisting[language=Python]{Programs/03.py}
+				
+				\newpage				
+				
+				The output from this section for k = 8 is 
+				
+				K =  8\\
+Conf Mean:  (7.998448633149601, 8.0155757558836989)\\
+Conf Var:  (15.966449581811148, 16.135066786590585)
+
+				
+				
+			\subsubsection{Part D Solution}
+				The outputs that are given from the program make sense as we know for the chi square distribution
+				
+				\begin{align}
+					E(X) \gets k\\
+					var(X) \gets 2k 
+				\end{align}			
+				
+				And we can see that the output is approximately equal to this.		
+\end{document}

@@ -1,0 +1,27 @@
+COMP 103 Assignment 4 
+Report on ArraySet testing and benchmarking
+
+Name:
+
+Testing:
+Which test methods succeeded or failed on your implementation of ArraySet:
+
+It passes all the tests currently
+
+
+
+
+
+Benchmarking:
+What were the results of your timing tests?
+(Give the time to load the dictionary and the time to check the story, for both
+ArraySet and HashSet.)
+
+Reading the dictonary words into the HashSet takes 0 seconds compared to the ArraySet which takes 170 seconds
+
+When checking plato the Hash Set takes 0 seconds (i.e. faster than a second) compared to the ArraySet which takes 149 seconds
+When checking hamlet the Hash Set takes 0 seconds (i.e. faster than a second) compared to the ArraySet which takes 41 seconds
+
+
+This shows that the HashSet is a much better option becasse it has consistanyly faster speeds for reading and writing. I dont know
+how the HashSet(which is just a HashMap with dummy values) works i cant comment any further.

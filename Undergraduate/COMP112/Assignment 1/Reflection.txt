@@ -1,0 +1,90 @@
+Questions for reflection.
+=========================
+
+1.  If you have used a programming languages before, other than
+Java, say which language, and identify some significant differences
+between it and Java.
+
+Answer 1: I know python, the key diffrence between them is that python is
+a much higher level language, for example rather than using && in a if statment
+you just use the word 'and' same goes for or, you use 'or' insted of ||. Python 
+uses white space to define where functions start and end, and to define where 
+a new line starts as oposed to java that uses brackets and semi colons to define 
+these things. In python variables arnt typed ( they are underneth but not to the programmer )
+so you can assign a variable an int value and then also a string. 
+
+
+2.  Which part of the two programs did you find the trickiest, and
+why?
+
+Answer 2: 
+
+RobotCleaner: I thought the trickest part of this program was the challenge problem
+to create a effecant stragie for cleaning a room of any size. My main problem with doing this was
+that it was very diffcult to be able to tell where the robot was allowd to go, with a room that
+is just a rectangle it wasnt diffcutlt at all though if you wanted to start making the rooms more complecated
+then checking wether the robot was still in the room was diffcult, i think this would actually
+be easier if we where dealing with an actual robot because then you would have sensors telling
+you wether you can move.
+
+DateChecker: The most diffcult part of this problem was the dealing with the julian
+callender challenge problem because it was very hard to find any information on the missing
+days, and when you where able to find some there was another source with conflicting info,
+eventually i settled with the information from dateandtime.com because it seemed like a
+reliable source. Allthough it turned out to be a small bug in my program not that the information
+i was finding wasnt creadible, this was still however the hardest part. 
+
+
+3. Identify all the editing and debugging tools in BlueJ that you have
+found that you think will be helpful while programming and debugging.
+Are there any tools that you have used in other languages that you
+wish you had in BlueJ? Why?
+
+Answer 3: Being able to step through your code and examin the variables
+is a very useful tool which helped me solve a number of simple bugs
+that otherwise would of been tricky to find. I am use to using Eclipse and 
+there debugger has the ability to look at the variables inside a class variable
+which is something you cant do with BlueJ
+
+
+4. List a brief summary of the key Java programming constructs (eg if
+statements, while loops, method headers...) that you have used so far.
+
+Answer 4:
+
+If Statments: Allow you to check a condition( or conditions ) and execute a code block if the
+condition is true, if you want to check mulitple conditions you can add else if statments
+below the first if statment and finally at the end you can add an else statment 
+which is like a default condition that is executed if no other condition
+is true.
+
+Switch And Case: Useful if you want to check to see if a variable is equal to
+a bunch of diffrent values. You could achive the same with if and else if statments
+but switch and case looks much nicer.
+
+While Loop: Will repeat executing the code block contained inside the loop untill a defined
+condition evalulates to false, you can execute out of a loop early with a break statment but
+that is consided to be bad programming, also a continue satatment will return you to the top of the 
+loop
+
+For Loop: A for loop is similar to the while loop in the sense that it will repeat untill a condtion
+evalulates to false, but for loops are better if you know how many itterations you are going to need
+for example looking at all the elements in an array.
+
+Method Headers: Method headers are where you define various things about a function, like its return type, 
+name and parameters that you pass to it. a function must always have a return type, if you dont want to return
+anything set it to void. There is how ever an exception to this, if you are defining a class constructor it wont
+have a return type and its name will be the same as the class.
+
+
+
+5. Identify any important concepts about programming or Computer
+Science in general that you have learned so far in the course.
+
+Answer 5: We have covered two important concepts in class, these are objects and encapsulation of variables, we touched on
+inherentance ( but we havent really gone over it ), and we learnt about method overloading.
+
+
+
+
+

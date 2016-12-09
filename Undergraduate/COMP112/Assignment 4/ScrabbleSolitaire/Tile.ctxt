@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=l\ v
+comment0.target=Tile(java.lang.String,\ int)
+comment1.params=
+comment1.target=void\ initilise()
+comment1.text=\n\ Function\ will\ open\ the\ buffered\ image\ that\ will\ be\ drawn\ when\ the\n\ draw\ function\ is\ called,\ this\ is\ to\ save\ memory\ when\ we\ have\ all\ the\ tiles\ in\ the\n\ bag\ not\ being\ drawn.\n\ \n\ Used\ the\ java\ website\ to\ figure\ out\ how\ to\ do\ this\n\ http\://docs.oracle.com/javase/tutorial/2d/images/loadimage.html\n
+comment2.params=x\ y
+comment2.target=boolean\ draw(int,\ int)
+comment2.text=\n\ Draws\ the\ tile\ to\ the\ provided\ x\ and\ y\n
+comment3.params=
+comment3.target=int\ getValue()
+comment3.text=\n\ Returns\ the\ value\ of\ the\ tile\n
+comment4.params=
+comment4.target=java.lang.String\ getLetter()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

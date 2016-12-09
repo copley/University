@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Pond()
+comment1.params=x\ y\ width\ n
+comment1.target=void\ steppingStones(double,\ double,\ double,\ int)
+comment1.text=\ Draw\ a\ path\ of\ stepping\ stones,\ starting\ at\ (x,y)\r\n\twith\ the\ first\ stone\ of\ the\ given\ width,\ and\ each\ successive\r\n\tstone\ 80%\ of\ the\ previous\ stone.\r\n\tThe\ stones\ look\ approximately\ right\ if\ the\ height\ of\ the\ oval\r\n\tis\ 1/4\ the\ width.\r\n
+comment2.params=xBot\ yBot\ xTop\ yTop
+comment2.target=void\ drawTree(double,\ double,\ double,\ double)
+comment2.text=\ Draw\ a\ tree\ with\ the\ base\ at\ (xBot,\ yBot).\r\n\ \ The\ top\ of\ the\ first\ branch\ should\ be\ at\ xTop,\ yTop.\r\n\ \ Then\ draw\ three\ smaller\ trees\ on\ the\ top\ of\ this\ branch\r\n\ \ \ with\ tops\ above,\ to\ the\ left,\ and\ to\ the\ right\ of\ this\ branch.\r\n
+comment3.params=
+comment3.target=void\ drawPond()
+comment4.params=button
+comment4.target=void\ buttonPerformed(java.lang.String)
+comment4.text=Respond\ to\ button\ presses
+comment5.params=action\ x\ y
+comment5.target=void\ mousePerformed(java.lang.String,\ double,\ double)
+comment5.text=Respond\ to\ mouse\ events
+comment6.params=arguments
+comment6.target=void\ main(java.lang.String[])
+numComments=7

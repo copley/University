@@ -1,0 +1,26 @@
+/* Reflection.txt for COMP103
+ * Name:
+ * Usercode:
+ * ID:
+ */
+
+For your reflection:
+====================
+
+First, describe how far you got on this assignment. If there was a problem you got stuck on what was that problem?
+
+I was able to finish the assignment but i got stuck on the minimim height question, that just dident make sense how it was worded
+
+* Did you notice a difference in speed of the application compared to the one of assignment 4? Where does the speed difference come from?
+	The speed diffrence came from adding and removing and finding being log(n) time, i did notice it start to take a bit longer when i implemented
+	the self balancing because there where so many elements there where alot of rotations to do
+
+* What did you observe comparing the height of the tree, both after loading the dictionary words and after removing the bad words? How do you explain this result?
+	The height of the tree dident appear to change, i would assume that this is because there where still words at depth 37 that wherent in the bad words list.
+
+* What is the numerical difference between the height of the tree you observed and the theoretical minimum? State the number and briefly comment on how much it affects the search speed.
+	If your trees height is at the theretical minumum then it speeds up the searching process and in turn it also speeds up the adding and removing becasue it is faster to
+	traverse the tree
+
+----------------------------------------------------------------
+
